@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ECM Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #3498db;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #2980b9;
+        }
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .cart-info {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .btn-add {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-add:hover {
+            background-color: #229954;
+        }
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Products - ECM Marketplace</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="login.html" id="nav-login">Login</a>
+        <a href="products.html" id="nav-products">Products</a>
+        <a href="checkout.html" id="nav-checkout">Checkout</a>
+    </nav>
+    
+    <div class="content">
+        <h2>Product Catalog</h2>
+        
+        <div class="cart-info">
+            Cart: <strong id="cart-count">0</strong> items
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" id="q" placeholder="Search products by name..." oninput="search()">
+        </div>
+        
+        <table id="tbl-products">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- Products will be rendered here -->
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        // In-memory product database
+        const DB = [
+            { id: 1, name: 'Keyboard', price: 120.90 },
+            { id: 2, name: 'Mouse', price: 79.50 },
+            { id: 3, name: 'Monitor', price: 1299.00 },
+            { id: 4, name: 'Headset', price: 240.00 },
+            { id: 5, name: 'Webcam', price: 320.00 },
+        ];
+
+        let searchTimeout = null;
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts(DB);
+            updateCartCount();
+        });
+
+        function renderProducts(products) {
+            const tbody = document.getElementById('tbody');
+            tbody.innerHTML = '';
+            
+            if (products.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="no-results">No products found</td></tr>';
+                return;
+            }
+            
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td class="price">$${product.price.toFixed(2)}</td>
+                    <td>
+                        <button class="btn-add" data-id="${product.id}" onclick="addToCart(${product.id})">
+                            Add to Cart
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function search() {
+            const query = document.getElementById('q').value.toLowerCase().trim();
+            
+            // Clear previous timeout
+            if (searchTimeout) {
+                clearTimeout(searchTimeout);
+            }
+            
+            // Intentional delay of 400ms for explicit wait practice
+            searchTimeout = setTimeout(() => {
+                if (query === '') {
+                    renderProducts(DB);
+                } else {
+                    const filtered = DB.filter(product => 
+                        product.name.toLowerCase().includes(query)
+                    );
+                    renderProducts(filtered);
+                }
+            }, 400);
+        }
+
+        function addToCart(productId) {
+            const product = DB.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Get current cart from localStorage
+            let cart = [];
+            const cartData = localStorage.getItem('cart');
+            if (cartData) {
+                try {
+                    cart = JSON.parse(cartData);
+                } catch (e) {
+                    cart = [];
+                }
+            }
+            
+            // Add product to cart
+            cart.push(product);
+            
+            // Save back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count display
+            updateCartCount();
+            
+            // Visual feedback
+            const button = document.querySelector(`button[data-id="${productId}"]`);
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.disabled = true;
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 1000);
+        }
+
+        function updateCartCount() {
+            let count = 0;
+            const cartData = localStorage.getItem('cart');
+            if (cartData) {
+                try {
+                    const cart = JSON.parse(cartData);
+                    count = cart.length;
+                } catch (e) {
+                    count = 0;
+                }
+            }
+            document.getElementById('cart-count').textContent = count;
+        }
+    </script>
+</body>
+</html>
