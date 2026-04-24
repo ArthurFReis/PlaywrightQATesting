@@ -1,0 +1,22 @@
+{
+  "name": "qa-demo-app",
+  "version": "1.0.0",
+  "description": "A minimal web app for QA automation practice with intentional delays and localStorage",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "testing",
+    "selenium",
+    "playwright"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}

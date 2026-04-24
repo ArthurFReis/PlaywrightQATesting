@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECM Marketplace - QA Automation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #3498db;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #2980b9;
+        }
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ECM Marketplace - QA Automation Test</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="login.html" id="nav-login">Login</a>
+        <a href="products.html" id="nav-products">Products</a>
+        <a href="checkout.html" id="nav-checkout">Checkout</a>
+    </nav>
+    
+    <div class="content">
+        <h2>Welcome to ECM Marketplace</h2>
+        <p>This is a simple web application designed for QA automation practice. Use the navigation menu above to explore different pages:</p>
+        <ul>
+            <li><strong>Login:</strong> Authenticate with credentials (username: valid_user, password: secret123)</li>
+            <li><strong>Products:</strong> Browse and add items to your cart</li>
+            <li><strong>Checkout:</strong> Complete your purchase</li>
+        </ul>
+        <p>This application uses localStorage for authentication and cart management, and includes intentional delays to practice explicit waits in test automation.</p>
+    </div>
+</body>
+</html>
