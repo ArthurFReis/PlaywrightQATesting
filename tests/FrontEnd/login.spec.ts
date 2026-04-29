@@ -42,8 +42,10 @@ test.describe.parallel('Login', () => {
         await page.screenshot({path: "Evidencias/login/LoginProductsErradoPasswordSemMensagemErro.png"});
         
     });
-test('login localstorage', async ({ page }) => {
+test('login localstorage', async ({ browser }) => {
 
+    const context = await browser.newContext({ storageState: 'Evidencias/login/localsotage/storageState.json' });
+    const page = await context.newPage();
     const navigationPage = new NavegationPage(page);
     await navigationPage.loginPage();
 
