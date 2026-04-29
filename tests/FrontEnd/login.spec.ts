@@ -52,16 +52,22 @@ test('login localstorage', async ({ page }) => {
         localStorage.setItem('password', 'secret123');
 
     });
-    const username = await page.evaluate(() => localStorage.getItem('username'));
-    username?.toString();
-    const password = await page.evaluate(() => localStorage.getItem('password'));
-    password?.toString();
+    let username: any = 'hello';
+    let password: any = 'hi';
+
+    
+     username = await page.evaluate(() => localStorage.getItem('username'));
+    //username?.toString();
+     password = await page.evaluate(() => localStorage.getItem('password'));
+    //password?.toString();
 
 
     await page.getByLabel('Username:').fill(username);
     await page.getByLabel('Password:').fill(password);   
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
     await page.locator('#btnLogin').click();
+
+    await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"});   
     });
 

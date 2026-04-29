@@ -1,0 +1,18 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:8080",
+      "localStorage": [
+        {
+          "name": "username",
+          "value": "valid_user"
+        },
+        {
+          "name": "password",
+          "value": "secret123"
+        }
+      ]
+    }
+  ]
+}
