@@ -27,6 +27,8 @@ test.describe.parallel('Login', () => {
         await page.screenshot({path: "Evidencias/login/LoginProductsErradoUsuario.png"});
         const status = await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsErradoUsuarioSemMensagemErro.png"});
+
+
         
     });
 
@@ -39,6 +41,28 @@ test.describe.parallel('Login', () => {
         await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsErradoPasswordSemMensagemErro.png"});
         
+    });
+test('login localstorage', async ({ page }) => {
+
+    const navigationPage = new NavegationPage(page);
+    await navigationPage.loginPage();
+
+    await page.evaluate(() => {
+        localStorage.setItem('username', 'valid_user');
+        localStorage.setItem('password', 'secret123');
+
+    });
+    const username = await page.evaluate(() => localStorage.getItem('username'));
+    username?.toString();
+    const password = await page.evaluate(() => localStorage.getItem('password'));
+    password?.toString();
+
+
+    await page.getByLabel('Username:').fill(username);
+    await page.getByLabel('Password:').fill(password);   
+    await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
+    await page.locator('#btnLogin').click();
+    await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"});   
     });
 
 });
