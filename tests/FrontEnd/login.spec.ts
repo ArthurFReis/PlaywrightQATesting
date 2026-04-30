@@ -10,8 +10,9 @@ test.describe.parallel('Login', () => {
     test('login correto', async ({ request, page }) => {
         const navigationPage = new NavegationPage(page);;
         await navigationPage.loginPage();
-        await page.locator('#username').fill('valid_user');
-        await page.locator('#password').fill('secret123');
+        await page.fill('#username', 'valid_user');
+       // await page.locator('#username').fill('valid_user');
+        await page.fill('#password',  'secret123');
         await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
         await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
