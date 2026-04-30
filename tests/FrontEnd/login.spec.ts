@@ -8,7 +8,7 @@ test.beforeEach(async ({ request, page }) => {
     const context = await browser.newContext();
     await page.goto('http://localhost:8080/login.html');
     await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
-    await browser.close();
+    //await browser.close();
   });
 
 test.describe.parallel('Login', () => {
