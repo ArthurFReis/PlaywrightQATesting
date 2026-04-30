@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.715844999999739">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-04-29T19:51:28.541Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.359" errors="0">
-<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="7.359">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.9868959999997164">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-04-30T10:11:14.874Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.906" errors="0">
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="2.906">
 </testcase>
 </testsuite>
 </testsuites>
