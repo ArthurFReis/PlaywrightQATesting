@@ -14,7 +14,8 @@ test.describe.parallel('Login', () => {
        // await page.locator('#username').fill('valid_user');
         await page.fill('#password',  'secret123');
         await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
-        await page.locator('#btnLogin').click();
+        await page.click('#btnLogin');
+        //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
         
         
