@@ -1,12 +1,8 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="13.202547000000253">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-04T13:48:29.000Z" hostname="chromium" tests="4" failures="0" skipped="0" time="11.313" errors="0">
-<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="2.886">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="6.885533999999985">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-04T13:51:05.229Z" hostname="chromium" tests="2" failures="0" skipped="0" time="5.221" errors="0">
+<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="4.871">
 </testcase>
-<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="3.927">
-</testcase>
-<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.867">
-</testcase>
-<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="0.633">
+<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="0.35">
 </testcase>
 </testsuite>
 </testsuites>
