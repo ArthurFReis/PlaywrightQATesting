@@ -13,9 +13,7 @@ test.beforeEach(async ({ request, page }) => {
   });
 
 test.describe.parallel('Login', () => {
-
     
-
     test('login correto', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
@@ -64,11 +62,11 @@ test('login localstorage', async ({ page }) => {
     await page.evaluate(() => {
         localStorage.setItem('username', 'valid_user');
         localStorage.setItem('password', 'secret123');
-
     });
-    let username: any = 'hello';
-    let password: any = 'hi';
 
+    let username: any =  "Hello";
+    let password: any =  "xpto";
+    
      username = await page.evaluate(() => localStorage.getItem('username'));
      password = await page.evaluate(() => localStorage.getItem('password'));
     
