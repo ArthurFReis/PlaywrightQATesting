@@ -14,6 +14,11 @@ export class NavegationPage {
         await expect(this.page).toHaveURL('http://localhost:8080/index.html');
     }
 
+    async loginPage(){
+        await this.page.locator('nav').locator('#nav-login').click();
+        await expect(this.page).toHaveURL('http://localhost:8080/login.html');
+    }
+
     async productsPage(){
         await this.page.locator('nav').locator('#nav-products').click();
         await expect(this.page).toHaveURL('http://localhost:8080/products.html');

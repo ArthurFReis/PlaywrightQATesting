@@ -1,6 +1,6 @@
 import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
-import { LoginPage } from './loginPage';
+
 
 
 test.beforeEach(async ({ request, page }) => {
@@ -14,15 +14,15 @@ test.beforeEach(async ({ request, page }) => {
 
 test.describe.parallel('Login', () => {
 
-    test('login correto', async ({  page }) => {
-        const loginPage = new LoginPage(page);
-        await loginPage.login('valid_user', 'secret123');
-        //await page.fill('#username', 'valid_user');
-       // await page.locator('#username').fill('valid_user');
-        //await page.fill('#password',  'secret123');
-        //await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
-        //await page.click('#btnLogin');
-        //await page.locator('#btnLogin').click();
+    test('login correto', async ({ request, page }) => {
+        const navigationPage = new NavegationPage(page);
+        await navigationPage.loginPage();
+        await page.fill('#username', 'valid_user');
+        await page.locator('#username').fill('valid_user');
+        await page.fill('#password',  'secret123');
+        await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
+        await page.click('#btnLogin');
+        await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
         
         
@@ -30,8 +30,8 @@ test.describe.parallel('Login', () => {
 
     test('login usuario errado', async ({ page }) => {
         let errors: any = {"user": ["valid", "invalid", "user1", ""], "password": "secret123", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
-        const loginPage = new LoginPage(page);
-        //await loginPage.login('valid_user', 'secret123');
+        const navigationPage = new NavegationPage(page);
+        await navigationPage.loginPage();
         for (const error in errors.user) {
             await page.locator('#username').fill(errors.user[error]);
             await page.locator('#password').fill(errors.password);
@@ -43,8 +43,8 @@ test.describe.parallel('Login', () => {
 
     test('login password errado', async ({ page }) => {
         let errors: any = {"password": ["secret1", "secret12", "secrect", ""], "user": "valid_user", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
-        const loginPage = new LoginPage(page);
-        //await loginPage.login('valid_user', 'secret123');
+        const navigationPage = new NavegationPage(page);
+        await navigationPage.loginPage();
         for (const error in errors.password) {
             await page.locator('#username').fill(errors.user);
             await page.locator('#password').fill(errors.password[error]);
@@ -56,8 +56,8 @@ test.describe.parallel('Login', () => {
     });
 test('login localstorage', async ({ page }) => {
 
-    const loginPage = new LoginPage(page);
-    //await loginPage.login('valid_user', 'secret123');
+    const navigationPage = new NavegationPage(page);
+    await navigationPage.loginPage();
 
     await page.evaluate(() => {
         localStorage.setItem('username', 'valid_user');
