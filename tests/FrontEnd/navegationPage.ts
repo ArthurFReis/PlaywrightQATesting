@@ -1,21 +1,17 @@
-import { Page, expect } from '@playwright/test';
+import { Page, expect, Locator } from '@playwright/test';
 
 export class NavegationPage {
     
     readonly page: Page;
+   
 
     constructor(page: Page){
-        this.page = page
+        this.page = page;
+        
     }
-
     async homePage(){
         await this.page.locator('nav').locator('#nav-home').click();
         await expect(this.page).toHaveURL('http://localhost:8080/index.html');
-    }
-
-    async loginPage(){
-        await this.page.locator('nav').locator('#nav-login').click();
-        await expect(this.page).toHaveURL('http://localhost:8080/login.html');
     }
 
     async productsPage(){
