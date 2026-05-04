@@ -37,7 +37,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password);
                 await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
                 const status = await page.locator('#btnLogin').click();
-                await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.msn[error]}.png`});
+                await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
     });
 
