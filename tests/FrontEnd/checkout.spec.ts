@@ -39,6 +39,7 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
+            await expect(page.locator('#msg')).toHaveText('Order placed successfully');
         }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
     });
@@ -56,7 +57,7 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
-        }
+        }   
         //await page.locator('#btnFinish').click();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         
