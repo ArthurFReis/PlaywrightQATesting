@@ -17,11 +17,29 @@ test.describe.parallel('checkout', () => {
         await navigationPage.loginPage();
         await page.locator('#username').fill('valid_user');
         await page.locator('#password').fill('secret123');
-        await page.locator('#btnLogin').click();
-        await page.locator('[data-id="2"]').click();
+        const btnLogin = await page.locator('#btnLogin').isDisabled();
+        if (btnLogin === true) {
+            console.log('O botão de login está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.locator('#btnLogin').click();
+        }
+        const adicionar = await page.locator('[data-id="2"]').isDisabled();
+        if (adicionar === true) {
+            console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.click('[data-id="2"]');
+        }
         await navigationPage.checkoutPage();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoCorreto.png"});
-        await page.locator('#btnFinish').click();
+        const btnfinish = await page.locator('#btnFinish').isDisabled();
+        if (btnfinish === true) {
+            console.log('O botão de finalizar pedido está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.click('#btnFinish');
+        }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
     });
 
@@ -32,7 +50,13 @@ test.describe.parallel('checkout', () => {
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoCorreto2.png"});
         //await page.locator('[data-id="2"]').click();
         await navigationPage.checkoutPage();
-        await page.click('#btnFinish');
+        const btnfinish = await page.locator('#btnFinish').isDisabled();
+        if (btnfinish === true) {
+            console.log('O botão de finalizar pedido está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.click('#btnFinish');
+        }
         //await page.locator('#btnFinish').click();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         

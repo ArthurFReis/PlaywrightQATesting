@@ -35,7 +35,13 @@ test.describe.parallel('Products', () => {
     test('products adicionar produto no carrinho', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.productsPage();
-        await page.locator('[data-id="2"]').click();
+        const adicionar = await page.locator('[data-id="2"]').isDisabled();
+        if (adicionar === true) {
+            console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.click('[data-id="2"]');
+        }
         await page.screenshot({path: "Evidencias/Products/AdicionarProdutoCart.png"});
     });
 

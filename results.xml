@@ -1,6 +1,12 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.716634999999776">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-04T19:36:24.677Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.963" errors="0">
-<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="2.963">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="6.022584999999031">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-04T19:46:00.234Z" hostname="chromium" tests="4" failures="0" skipped="0" time="4.165" errors="0">
+<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="2.749">
+</testcase>
+<testcase name="Products › products pesquisa pela metade do nome" classname="tests\FrontEnd\products.spec.ts" time="0.454">
+</testcase>
+<testcase name="Products › products pesquisa pelo produto que não existe no catalogo" classname="tests\FrontEnd\products.spec.ts" time="0.436">
+</testcase>
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.526">
 </testcase>
 </testsuite>
 </testsuites>
