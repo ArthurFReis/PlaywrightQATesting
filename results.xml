@@ -1,12 +1,12 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="6.045972999999998">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-04T15:01:17.300Z" hostname="chromium" tests="4" failures="0" skipped="0" time="4.265" errors="0">
-<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="2.739">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="13.777671000000002">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-04T16:56:03.626Z" hostname="chromium" tests="4" failures="0" skipped="0" time="11.598" errors="0">
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="3.013">
 </testcase>
-<testcase name="Products › products pesquisa pela metade do nome" classname="tests\FrontEnd\products.spec.ts" time="0.508">
+<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="3.942">
 </testcase>
-<testcase name="Products › products pesquisa pelo produto que não existe no catalogo" classname="tests\FrontEnd\products.spec.ts" time="0.575">
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.946">
 </testcase>
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.443">
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="0.697">
 </testcase>
 </testsuite>
 </testsuites>
