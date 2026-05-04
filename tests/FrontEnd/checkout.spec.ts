@@ -3,11 +3,11 @@ import { NavegationPage } from './navegationPage';
 
 
 test.beforeEach(async ({ page }) => {
-     const browser = await webkit.launch();
-         const context = await browser.newContext();
-         await page.goto('http://localhost:8080/');
-         await expect(page).toHaveURL('http://localhost:8080/');
-         await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
+  const browser = await webkit.launch();
+  const context = await browser.newContext();
+  await page.goto('http://localhost:8080/');
+  await expect(page).toHaveURL('http://localhost:8080/');
+  await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
   });
 
 test.describe.parallel('checkout', () => {
@@ -57,6 +57,7 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
+            await expect(page.locator('#msg')).toHaveText('User not authenticated');
         }   
         //await page.locator('#btnFinish').click();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
