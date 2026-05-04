@@ -34,9 +34,9 @@ test.describe.parallel('Login', () => {
         for (const error in errors.user) {
             await page.locator('#username').fill(errors.user[error]);
             await page.locator('#password').fill(errors.password);
-                await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
-                 await page.locator('#btnLogin').click();
-                await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
+            await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
+            await page.locator('#btnLogin').click();
+            await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
     });
 
