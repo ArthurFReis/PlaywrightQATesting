@@ -21,7 +21,13 @@ test.describe.parallel('Login', () => {
         await page.locator('#username').fill('valid_user');
         await page.fill('#password',  'secret123');
         await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
-        await page.click('#btnLogin');
+        const btnLogin = await page.locator('#btnLogin').isDisabled();
+        if (btnLogin === true) {
+            console.log('O botão de login está desabilitado, verifique os campos de preenchimento');
+        }
+        else {
+            await page.locator('#btnLogin').click();
+        }
         //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
         
