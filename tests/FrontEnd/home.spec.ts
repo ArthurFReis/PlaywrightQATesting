@@ -17,3 +17,7 @@ test('menu', async ({ page }) => {
         await navigationPage.checkoutPage();  
         await page.screenshot({path: "Evidencias/Home/Menucheckout.png"});
   });
+
+  test.afterAll(async ({ page }) => {
+     await page.goto('http://localhost:8080/');
+  });
