@@ -16,7 +16,7 @@ export default defineConfig({
   retries: 1,
   reporter: [['json', 'html'], ['junit', {outputFile: 'results.xml'}]],
   
-  globalTimeout: 5000,
+  globalTimeout: 600,
   fullyParallel: true,
   
   use: {

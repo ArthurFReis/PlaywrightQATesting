@@ -27,6 +27,7 @@ test.describe.parallel('Login', () => {
         }
         else {
             await page.locator('#btnLogin').click();
+            await expect(page.locator('#msg')).toHaveText('Login successful');
         }
         //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
@@ -43,6 +44,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password);
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
+            await expect(page.locator('#msg')).toHaveText('Invalid credentials');
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
     });
@@ -56,6 +58,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password[error]);
             await page.screenshot({path: `Evidencias/login/PasswordErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
+            await expect(page.locator('#msg')).toHaveText('Invalid credentials');
             await page.screenshot({path: `Evidencias/login/PasswordErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
         
@@ -80,6 +83,7 @@ test('login localstorage', async ({ page }) => {
     await page.getByLabel('Password:').fill(password);   
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
     await page.locator('#btnLogin').click();
+    await expect(page.locator('#msg')).toHaveText('Login successful');
     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"});  
     

@@ -11,6 +11,10 @@
         {
           "name": "password",
           "value": "secret123"
+        },
+        {
+          "name": "auth",
+          "value": "true"
         }
       ]
     }
