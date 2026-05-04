@@ -8,11 +8,11 @@ test.beforeEach(async ({ page }) => {
 test('menu', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.homePage();
-        await page.screenshot({path: "Evidencias/Menu/Menuhome.png"});
+        await page.screenshot({path: "Evidencias/Home/Menuhome.png"});
         await navigationPage.loginPage();
-        await page.screenshot({path: "Evidencias/Menu/Menulogin.png"});
+        await page.screenshot({path: "Evidencias/Home/Menulogin.png"});
         await navigationPage.productsPage();
-        await page.screenshot({path: "Evidencias/Menu/Menuproducts.png"}); 
+        await page.screenshot({path: "Evidencias/Home/Menuproducts.png"}); 
         await navigationPage.checkoutPage();  
-        await page.screenshot({path: "Evidencias/Menu/Menucheckout.png"});
+        await page.screenshot({path: "Evidencias/Home/Menucheckout.png"});
   });
