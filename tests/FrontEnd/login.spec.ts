@@ -14,6 +14,8 @@ test.beforeEach(async ({ request, page }) => {
 
 test.describe.parallel('Login', () => {
 
+    
+
     test('login correto', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
@@ -29,7 +31,7 @@ test.describe.parallel('Login', () => {
     });
 
     test('login usuario errado', async ({ page }) => {
-        let errors: any = {"user": ["valid", "invalid", "user1", ""], "password": "secret123", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
+        let errors = {"user": ["valid", "invalid", "user1", ""], "password": "secret123", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         for (const error in errors.user) {
@@ -42,7 +44,7 @@ test.describe.parallel('Login', () => {
     });
 
     test('login password errado', async ({ page }) => {
-        let errors: any = {"password": ["secret1", "secret12", "secrect", ""], "user": "valid_user", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
+        let errors = {"password": ["secret1", "secret12", "secrect", ""], "user": "valid_user", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         for (const error in errors.password) {
@@ -54,7 +56,7 @@ test.describe.parallel('Login', () => {
         }
         
     });
-    test('login localstorage', async ({ page }) => {
+test('login localstorage', async ({ page }) => {
 
     const navigationPage = new NavegationPage(page);
     await navigationPage.loginPage();
