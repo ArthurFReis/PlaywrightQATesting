@@ -1,23 +1,33 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 
 
 test.beforeEach(async ({ page }) => {
-     await page.goto('http://localhost:8080/');
+     const browser = await webkit.launch();
+         const context = await browser.newContext();
+         await page.goto('http://localhost:8080/');
+         await expect(page).toHaveURL('http://localhost:8080/');
+         await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
   });
 
 test('menu', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.homePage();
+        await expect(page).toHaveURL('http://localhost:8080/index.html');
         await page.screenshot({path: "Evidencias/Home/Menuhome.png"});
         await navigationPage.loginPage();
+        await expect(page).toHaveURL('http://localhost:8080/login.html');
         await page.screenshot({path: "Evidencias/Home/Menulogin.png"});
         await navigationPage.productsPage();
+        await expect(page).toHaveURL('http://localhost:8080/products.html');
         await page.screenshot({path: "Evidencias/Home/Menuproducts.png"}); 
-        await navigationPage.checkoutPage();  
+        await navigationPage.checkoutPage(); 
+        await expect(page).toHaveURL('http://localhost:8080/checkout.html');
         await page.screenshot({path: "Evidencias/Home/Menucheckout.png"});
   });
 
   test.afterAll(async ({ page }) => {
      await page.goto('http://localhost:8080/');
+     await expect(page).toHaveURL('http://localhost:8080/');
+     await page.screenshot({path: "Evidencias/login/AfterAll.png"});  
   });

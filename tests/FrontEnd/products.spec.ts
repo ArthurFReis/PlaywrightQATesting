@@ -1,8 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:8080/');
+     const browser = await webkit.launch();
+         const context = await browser.newContext();
+         await page.goto('http://localhost:8080/');
+         await expect(page).toHaveURL('http://localhost:8080/');
+         await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
   });
 
 test.describe.parallel('Products', () => {
