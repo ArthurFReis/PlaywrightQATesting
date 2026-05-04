@@ -28,7 +28,6 @@ test.describe.parallel('Login', () => {
     });
 
     test('login usuario errado', async ({ page }) => {
-
         let errors: any = {"user": ["valid", "invalid", "user1", ""], "password": "secret123", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
@@ -36,7 +35,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#username').fill(errors.user[error]);
             await page.locator('#password').fill(errors.password);
                 await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
-                const status = await page.locator('#btnLogin').click();
+                 await page.locator('#btnLogin').click();
                 await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
     });
