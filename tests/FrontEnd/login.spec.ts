@@ -14,7 +14,7 @@ test.beforeEach(async ({ request, page }) => {
 
 test.describe.parallel('Login', () => {
 
-    test('login correto', async ({ request, page }) => {
+    test('login correto', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         await page.fill('#username', 'valid_user');
@@ -22,7 +22,7 @@ test.describe.parallel('Login', () => {
         await page.fill('#password',  'secret123');
         await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
         await page.click('#btnLogin');
-        await page.locator('#btnLogin').click();
+        //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
         
         
