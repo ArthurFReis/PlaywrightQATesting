@@ -41,13 +41,16 @@ test.describe.parallel('Login', () => {
     });
 
     test('login password errado', async ({ page }) => {
+        let errors: any = {"password": ["secret1", "secret12", "secrect", ""], "user": "valid_user", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
-        await page.locator('#username').fill('valid_user');
-        await page.locator('#password').fill('secret12');
-        await page.screenshot({path: "Evidencias/login/LoginProductsErradoPassword.png"});
-        await page.locator('#btnLogin').click();
-        await page.screenshot({path: "Evidencias/login/LoginProductsErradoPasswordSemMensagemErro.png"});
+        for (const error in errors.password) {
+            await page.locator('#username').fill(errors.user);
+            await page.locator('#password').fill(errors.password[error]);
+            await page.screenshot({path: `Evidencias/login/PasswordErrado/Preenchimento${errors.dados[error]}.png`});      
+            await page.locator('#btnLogin').click();
+            await page.screenshot({path: `Evidencias/login/PasswordErrado/PreenchimentoMessage${errors.msn[error]}.png`});
+        }
         
     });
 test('login localstorage', async ({ page }) => {
