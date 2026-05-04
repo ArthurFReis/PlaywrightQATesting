@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
          const context = await browser.newContext();
          await page.goto('http://localhost:8080/');
          await expect(page).toHaveURL('http://localhost:8080/');
-         await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
+         await page.screenshot({path: "Evidencias/Products/BeforeEach.png"});
   });
 
 test.describe.parallel('Products', () => {

@@ -54,7 +54,7 @@ test.describe.parallel('Login', () => {
         }
         
     });
-test('login localstorage', async ({ page }) => {
+    test('login localstorage', async ({ page }) => {
 
     const navigationPage = new NavegationPage(page);
     await navigationPage.loginPage();
@@ -79,7 +79,5 @@ test('login localstorage', async ({ page }) => {
     
     await page.close();
     });
-
-    
 
 });

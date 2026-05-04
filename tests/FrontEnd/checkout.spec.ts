@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
          const context = await browser.newContext();
          await page.goto('http://localhost:8080/');
          await expect(page).toHaveURL('http://localhost:8080/');
-         await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
+         await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
   });
 
 test.describe.parallel('checkout', () => {
@@ -28,9 +28,13 @@ test.describe.parallel('checkout', () => {
     test('cheout Unauthenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.productsPage();
-        await page.locator('[data-id="2"]').click();
+        await page.click('[data-id="2"]');
+        await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoCorreto2.png"});
+        //await page.locator('[data-id="2"]').click();
         await navigationPage.checkoutPage();
-        await page.locator('#btnFinish').click();
+        await page.click('#btnFinish');
+        //await page.locator('#btnFinish').click();
+        await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         
     });
 
