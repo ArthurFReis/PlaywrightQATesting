@@ -44,41 +44,13 @@ test.describe.parallel('Products', () => {
         let cartCount = 0;
 
 
-
         for (let i = 0; i < ids.length; i++) {
             id = ids[i];
 
-            if (id === 1){
-                let statusbotao = await page.locator(`[data-id="${id}"]`).isDisabled();
-                if (statusbotao === true) {
-                    console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
-                }
+            if(await page.locator(`[data-id="${id}"]`).isDisabled()) {
+                console.log(`O botão de adicionar ao carrinho do produto com ID ${id} está desabilitado!`);
             }
-            else if (id === 2){
-                let statusbotao = await page.locator(`[data-id="${id}"]`).isDisabled();
-                if (statusbotao === true) {
-                    console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
-                }
-                
-            }
-            else if (id === 3){
-                let statusbotao = await page.locator(`[data-id="${id}"]`).isDisabled();
-                if (statusbotao === true) {
-                    console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
-                }
-            }
-            else if (id === 4){
-                let statusbotao = await page.locator(`[data-id="${id}"]`).isDisabled();
-                if (statusbotao === true) {
-                    console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
-                }
-            }
-            else if (id === 5){
-                let statusbotao = await page.locator(`[data-id="${id}"]`).isDisabled();
-                if (statusbotao === true) {
-                    console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
-                }
-            }
+            
 
             switch (id) {
                 case 1:
