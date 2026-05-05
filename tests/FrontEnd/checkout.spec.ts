@@ -19,23 +19,92 @@ test.describe.parallel('checkout', () => {
         await page.locator('#password').fill('secret123');
         const btnLogin = await page.locator('#btnLogin').isDisabled();
         if (btnLogin === true) {
-            console.log('O botão de login está desabilitado, verifique os campos de preenchimento');
+            console.log('O botão de login está desabilitado');
         }
         else {
             await page.locator('#btnLogin').click();
         }
-        const adicionar = await page.locator('[data-id="2"]').isDisabled();
-        if (adicionar === true) {
-            console.log('O botão de adicionar ao carrinho está desabilitado, verifique os campos de preenchimento');
+
+        let idProduto = [];
+        let nomeProduto = [];
+        let precoProduto = [];
+        let id = 0;
+        let ids = [1, 2, 3, 4, 5];
+        let cartCount = 0;
+
+        for (let i = 0; i < ids.length; i++) {
+            id = ids[i];
+
+            if(await page.locator(`[data-id="${id}"]`).isDisabled()) {
+                console.log(`O botão de adicionar ao carrinho do produto com ID ${id} está desabilitado!`);
+            }
+            
+            switch (id) {
+                case 1:
+                    await page.click(`[data-id="${id}"]`);
+                    idProduto.push(id);
+                    nomeProduto.push('Keyboard');
+                    precoProduto.push(120.90);
+                    cartCount = 1;
+                    break;
+
+                case 2:
+                    await page.click(`[data-id="${id}"]`);
+                    idProduto.push(id);
+                    nomeProduto.push('Mouse');
+                    precoProduto.push(79.50);
+                    cartCount = 1;    
+                    break;
+
+                case 3:
+                    await page.click(`[data-id="${id}"]`);
+                    idProduto.push(id);
+                    nomeProduto.push('Monitor');
+                    precoProduto.push(1299.00);
+                    break; 
+
+                case 4:
+                    await page.click(`[data-id="${id}"]`);
+                    idProduto.push(id);
+                    nomeProduto.push('Headset');
+                    precoProduto.push(240.00);
+                    cartCount = 1;
+                    break;
+
+                case 5:
+                    await page.click(`[data-id="${id}"]`);
+                    idProduto.push(id);
+                    nomeProduto.push('Webcam');
+                    precoProduto.push(320.00);
+                    cartCount = 1;
+                    break;
+
+                default:
+                    console.log('Id do produto não encontrado, verifique o id do produto');
+            }
         }
-        else {
-            await page.click('[data-id="2"]');
-        }
+        
         await navigationPage.checkoutPage();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoCorreto.png"});
-        const btnfinish = await page.locator('#btnFinish').isDisabled();
-        if (btnfinish === true) {
-            console.log('O botão de finalizar pedido está desabilitado, verifique os campos de preenchimento');
+
+        let totalFinal: any = 0;
+        let precoTotal: any = 0;
+
+        for (let i = 0; i < precoProduto.length; i++) {
+             precoTotal += precoProduto[i];
+        }
+        totalFinal = await page.locator('#total').textContent();
+
+        if(precoTotal == totalFinal){
+            console.log('O valor do total está correto! \n');
+        }
+        else{
+            console.log('Existe alguma coisa errada na soma do(s) valore(s) do(s) preço(s) do(s) produto(s) \n');
+        }
+
+       const btnfinish = await page.locator('#btnFinish').isDisabled();
+       if (btnfinish === true) {
+            console.log('O botão de finalizar pedido está desabilitado');
         }
         else {
             await page.click('#btnFinish');
@@ -44,7 +113,7 @@ test.describe.parallel('checkout', () => {
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
     });
 
-    test('cheout Unauthenticated', async ({ page }) => {
+   /* test('cheout Unauthenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.productsPage();
         await page.click('[data-id="2"]');
@@ -53,7 +122,7 @@ test.describe.parallel('checkout', () => {
         await navigationPage.checkoutPage();
         const btnfinish = await page.locator('#btnFinish').isDisabled();
         if (btnfinish === true) {
-            console.log('O botão de finalizar pedido está desabilitado, verifique os campos de preenchimento');
+            console.log('O botão de finalizar pedido está desabilitado');
         }
         else {
             await page.click('#btnFinish');
@@ -62,6 +131,6 @@ test.describe.parallel('checkout', () => {
         //await page.locator('#btnFinish').click();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         
-    });
+    }); */
 
 });

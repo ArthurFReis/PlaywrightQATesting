@@ -28,7 +28,7 @@ test.describe.parallel('Products', () => {
     test('products pesquisa pelo produto que não existe no catalogo', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.productsPage();
-        await page.getByPlaceholder('Search products by name...').fill('banha')
+        await page.getByPlaceholder('Search products by name...').fill('banha de porco')
         await page.screenshot({path: "Evidencias/Products/PesquisaProdutoNaoExisteCatalogo.png"});
     });
 
