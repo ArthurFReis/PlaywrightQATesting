@@ -1,6 +1,18 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.996489000000001">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-05T09:35:09.746Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.923" errors="0">
-<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="3.923">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.048106000000146">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-05T12:06:18.623Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.493" errors="0">
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="14.493">
+<system-out>
+<![CDATA[Todos os botões estão ativados 
+
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>
