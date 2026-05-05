@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
          await page.screenshot({path: "Evidencias/Home/BeforeEach.png"});
   });
 
-test('menu', async ({ page }) => {
+test('Home', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.homePage();
         await expect(page).toHaveURL('http://localhost:8080/index.html');
