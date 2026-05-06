@@ -106,7 +106,7 @@ test.describe.parallel('checkout', () => {
             await page.click('#btnFinish'); 
         }
         const mensagem = await page.locator('#msg').textContent({timeout: 500});
-        console.log("A mensagem recebida: ",  mensagem);
+        console.log("A mensagem recebida: \n",  mensagem);
         await expect(page.locator('#msg')).toHaveText('Order placed successfully');
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
           
