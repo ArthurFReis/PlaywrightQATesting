@@ -1,6 +1,5 @@
 import { Page, expect } from '@playwright/test';    
 
-// Função exportada que pode ser usada em qualquer lugar
 export async function AdicionarProdutosnoCarrinho(page: Page) {
         let idProduto = [];
         let nomeProduto = [];

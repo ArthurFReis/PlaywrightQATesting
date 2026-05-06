@@ -115,10 +115,7 @@ test.describe.parallel('checkout', () => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         await localStorageLogin(page);
-         
         await page.close();
-
-        await navigationPage.productsPage();
 
         let idProduto = [];
         let nomeProduto = [];
