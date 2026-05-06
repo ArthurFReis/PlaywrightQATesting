@@ -14,24 +14,14 @@ test.beforeEach(async ({ page }) => {
 test.describe.parallel('Products', () => {
 
     test('products pesquisa pelo nome completo correto', async ({ page }) => {
+        let pesquisas = {"pesquisar": ["mouse", "mou", "banha de porco", ""]};
         const navigationPage = new NavegationPage(page);
         await navigationPage.productsPage();
-        await page.getByPlaceholder('Search products by name...').fill('Mouse')
-        await page.screenshot({path: "Evidencias/Products/PesquisaMouseCorreto.png"});
-    });
-
-    test('products pesquisa pela metade do nome', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
-        await navigationPage.productsPage();
-        await page.getByPlaceholder('Search products by name...').fill('Mou')
-        await page.screenshot({path: "Evidencias/Products/PesquisaMetadeNome.png"});
-    });
-
-    test('products pesquisa pelo produto que não existe no catalogo', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
-        await navigationPage.productsPage();
-        await page.getByPlaceholder('Search products by name...').fill('banha de porco')
-        await page.screenshot({path: "Evidencias/Products/PesquisaProdutoNaoExisteCatalogo.png"});
+        for(const pesquisa in pesquisas.pesquisar) {
+            await page.getByPlaceholder('Search products by name...').clear()
+            await page.getByPlaceholder('Search products by name...').fill(pesquisas.pesquisar[pesquisa]);
+            await page.screenshot({path: `Evidencias/Products/FormasdePesquisarProdutos${pesquisas.pesquisar[pesquisa]}.png`});
+        }
     });
 
     test('products adicionar produto no carrinho', async ({ page }) => {
