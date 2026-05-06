@@ -3,7 +3,7 @@ import { NavegationPage } from './navegationPage';
 
 
 test.beforeEach(async ({ page }) => {
-     const browser = await webkit.launch();
+         const browser = await webkit.launch();
          const context = await browser.newContext();
          await page.goto('http://localhost:8080/');
          await expect(page).toHaveURL('http://localhost:8080/');
@@ -17,7 +17,7 @@ test.describe.parallel('Login', () => {
   await page.goto('http://localhost:8080/');
   await expect(page).toHaveURL('http://localhost:8080/');
   await page.screenshot({path: "Evidencias/Home/home-mobile.png.png"});
-  console.log("É responsivo!")
+  console.log("É responsivo! \n");
 });
 
 test('Home', async ({ page }) => {
@@ -34,6 +34,8 @@ test('Home', async ({ page }) => {
         await navigationPage.checkoutPage(); 
         await expect(page).toHaveURL('http://localhost:8080/checkout.html');
         await page.screenshot({path: "Evidencias/Home/Menucheckout.png"});
+
+        console.log("Todas as páginas estão funcionando! \n");
   });
 
    test.afterAll(async ({ page }) => {
