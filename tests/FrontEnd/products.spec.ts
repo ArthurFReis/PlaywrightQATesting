@@ -6,8 +6,8 @@ import { AdicionarProdutosnoCarrinho } from '../../app/Comum/Products/products';
 test.beforeEach(async ({ page }) => {
      const browser = await webkit.launch();
      const context = await browser.newContext();
-    await page.goto('http://localhost:8080/');
-    await expect(page).toHaveURL('http://localhost:8080/');
+    await page.goto('http://localhost:8080/products.html');
+    await expect(page).toHaveURL('http://localhost:8080/products.html');
     //await page.screenshot({path: "Evidencias/Products/BeforeEach.png"});
   });
 
@@ -22,6 +22,7 @@ test.describe.parallel('Products', () => {
             await page.getByPlaceholder('Search products by name...').fill(pesquisas.pesquisar[pesquisa], {timeout:400});
             await page.screenshot({path: `Evidencias/Products/FormasdePesquisarProdutos${pesquisas.pesquisar[pesquisa]}.png`});
         }
+        console.log('Pesquisa com sucesso!')
     });
 
     test('products adicionar produto no carrinho', async ({ page }) => {

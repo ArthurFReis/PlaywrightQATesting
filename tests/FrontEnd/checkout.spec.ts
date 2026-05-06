@@ -8,8 +8,8 @@ import { localStorageLogin } from '../../app/Comum/Login/login';
 test.beforeEach(async ({ page }) => {
   const browser = await webkit.launch();
   const context = await browser.newContext();
-  await page.goto('http://localhost:8080/');
-  await expect(page).toHaveURL('http://localhost:8080/');
+  await page.goto('http://localhost:8080/checkout.html');
+  await expect(page).toHaveURL('http://localhost:8080/checkout.html');
   
   //await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
   });
@@ -104,8 +104,12 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
-            await expect(page.locator('#msg')).toHaveText('Order placed successfully', {timeout:500});
+             
+            
         }
+        const mensagem = await page.locator('#msg').textContent({timeout: 500})
+        await expect(page.locator('#msg')).toHaveText('Order placed successfully');
+        console.log("A mensagem recebida: ",  mensagem)
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
 
         
@@ -200,7 +204,8 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
-            await expect(page.locator('#msg')).toHaveText('User not authenticated', {timeout:500});
+            await page.locator('#msg').textContent({timeout:500})
+            await expect(page.locator('#msg')).toHaveText('User not authenticated' );
         }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         
