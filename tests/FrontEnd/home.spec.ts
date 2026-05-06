@@ -19,7 +19,8 @@ test.describe.parallel('Login', () => {
       await page.setViewportSize({ width: tamanhos.width[tamanho], height: tamanhos.height[tamanho]});
       await page.goto('http://localhost:8080/');
       await expect(page).toHaveURL('http://localhost:8080/');
-      await page.screenshot({path: "Evidencias/Home/home-mobile.png.png"});
+      await page.screenshot({path: `Evidencias/Home/home-mobile${tamanhos.width[tamanho]}.png`});
+    
   }
   console.log("É responsivo! \n");
 });
