@@ -1,13 +1,9 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.033642999999923">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-06T18:44:29.381Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.652" errors="0">
-<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="7.652">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.251114999999991">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-06T20:01:54.252Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.503" errors="0">
+<testcase name="Login › Comparar screenshot responsiva" classname="tests\FrontEnd\home.spec.ts" time="3.503">
 <system-out>
-<![CDATA[Menssage recebida: 
-  
-O valor do total está correto! 
+<![CDATA[É responsivo! 
 
-A mensagem recebida: 
- 
 ]]>
 </system-out>
 </testcase>

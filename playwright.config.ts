@@ -53,7 +53,7 @@ export default defineConfig({
     
     {
       name: 'Mobile',
-      use: devices['Pixel 5'],
+      use: devices[''],
     },
 
   ],
