@@ -62,8 +62,8 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
 
             const stateAfter = await page.evaluate(() => JSON.stringify(window.localStorage));
             expect(stateBefore).not.toBe(stateAfter)
-            console.log('Antes: /n', stateBefore);
-            console.log('Depois: /n', stateAfter);
+            console.log('Antes: \n', stateBefore);
+            console.log('Depois: \n', stateAfter);
         }
 
 
