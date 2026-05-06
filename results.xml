@@ -1,10 +1,12 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.852290999999969">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-06T18:28:58.801Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.332" errors="0">
-<testcase name="Validar responsividade em mobile" classname="tests\FrontEnd\home.spec.ts" time="3.332">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="11.419665999999967">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-06T18:32:49.496Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.249" errors="0">
+<testcase name="Login › Comparar screenshot responsiva" classname="tests\FrontEnd\home.spec.ts" time="3.37">
 <system-out>
 <![CDATA[É responsivo!
 ]]>
 </system-out>
+</testcase>
+<testcase name="Login › Home" classname="tests\FrontEnd\home.spec.ts" time="2.879">
 </testcase>
 </testsuite>
 </testsuites>
