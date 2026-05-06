@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.459630999999819">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-06T17:32:18.263Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.869" errors="0">
-<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="6.869">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="25.474044999999926">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-06T17:41:17.928Z" hostname="chromium" tests="1" failures="0" skipped="0" time="22.505" errors="0">
+<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="22.505">
 <system-out>
 <![CDATA[Menssage recebida:  
 O valor do total está correto! 

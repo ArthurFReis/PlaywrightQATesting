@@ -103,16 +103,13 @@ test.describe.parallel('checkout', () => {
             console.log('O botão de finalizar pedido está desabilitado');
         }
         else {
-            await page.click('#btnFinish');
-             
-            
+            await page.click('#btnFinish'); 
         }
-        const mensagem = await page.locator('#msg').textContent({timeout: 500})
+        const mensagem = await page.locator('#msg').textContent({timeout: 500});
+        console.log("A mensagem recebida: ",  mensagem);
         await expect(page.locator('#msg')).toHaveText('Order placed successfully');
-        console.log("A mensagem recebida: ",  mensagem)
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
-
-        
+          
     });
        
     test('cheout Unauthenticated', async ({ page }) => {
