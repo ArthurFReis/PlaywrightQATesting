@@ -60,10 +60,8 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
                     console.log('Id do produto não encontrado, verifique o id do produto');
             }
 
-            
             const stateAfter = await page.evaluate(() => JSON.stringify(window.localStorage));
             expect(stateBefore).not.toBe(stateAfter)
-            
             console.log('Antes: /n', stateBefore);
             console.log('Depois: /n', stateAfter);
         }

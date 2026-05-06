@@ -1,26 +1,8 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="18.8873040000014">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-06T14:13:20.829Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.342" errors="0">
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="15.342">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.871190000001342">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-06T14:30:22.164Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.298" errors="0">
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="7.298">
 <system-out>
-<![CDATA[Antes: /n {}
-Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
-Antes: /n {}
-Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
-Antes: /n {}
-Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
-Antes: /n {}
-Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
-Antes: /n {}
-Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
-Todos os botões estão ativados 
-
-Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
-Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
-Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
-Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
-Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
-
- O valor do cart é: 5
+<![CDATA[Menssage recebida:  
 ]]>
 </system-out>
 </testcase>
