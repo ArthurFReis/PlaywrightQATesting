@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('http://localhost:8080/');
   await expect(page).toHaveURL('http://localhost:8080/');
   
-  await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
+  //await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
   });
 
 test.describe.parallel('checkout', () => {
@@ -104,7 +104,7 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
-            await expect(page.locator('#msg')).toHaveText('Order placed successfully');
+            await expect(page.locator('#msg')).toHaveText('Order placed successfully', {timeout:500});
         }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
 
@@ -200,7 +200,7 @@ test.describe.parallel('checkout', () => {
         }
         else {
             await page.click('#btnFinish');
-            await expect(page.locator('#msg')).toHaveText('User not authenticated');
+            await expect(page.locator('#msg')).toHaveText('User not authenticated', {timeout:500});
         }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         

@@ -10,7 +10,7 @@ test.beforeEach(async ({ request, page }) => {
     const browser = await webkit.launch();
     const context = await browser.newContext();
     await page.goto('http://localhost:8080/login.html');
-    await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
+   // await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
     //await browser.close();
   });
 
@@ -29,7 +29,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password);
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Invalid credentials');
+            await expect(page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
     });
@@ -43,7 +43,7 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password[error]);
             await page.screenshot({path: `Evidencias/login/PasswordErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Invalid credentials');
+            await expect(page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
             await page.screenshot({path: `Evidencias/login/PasswordErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
         

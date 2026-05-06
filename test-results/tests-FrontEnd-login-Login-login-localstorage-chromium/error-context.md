@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: tests\FrontEnd\checkout.spec.ts >> checkout >> cheout Unauthenticated
-- Location: tests\FrontEnd\checkout.spec.ts:114:9
+- Name: tests\FrontEnd\login.spec.ts >> Login >> login localstorage
+- Location: tests\FrontEnd\login.spec.ts:51:5
 
 # Error details
 

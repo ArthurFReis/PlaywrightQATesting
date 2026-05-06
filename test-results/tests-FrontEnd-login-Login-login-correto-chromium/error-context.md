@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: tests\FrontEnd\checkout.spec.ts >> checkout >> cheout Unauthenticated
-- Location: tests\FrontEnd\checkout.spec.ts:114:9
+- Name: tests\FrontEnd\login.spec.ts >> Login >> login correto
+- Location: tests\FrontEnd\login.spec.ts:19:9
 
 # Error details
 
@@ -75,7 +75,8 @@ Call log:
   12 |         }
   13 |         else {
   14 |             await page.locator('#btnLogin').click();
-  15 |             await expect(page.locator('#msg')).toHaveText('Login successful', {timeout:600});
+> 15 |             await expect(page.locator('#msg')).toHaveText('Login successful', {timeout:600});
+     |                                                ^ Error: expect(locator).toHaveText(expected) failed
   16 |         }
   17 |         //await page.locator('#btnLogin').click();
   18 |         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
@@ -97,8 +98,7 @@ Call log:
   34 |     await page.getByLabel('Password:').fill(password);   
   35 |     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
   36 |     await page.locator('#btnLogin').click();
-> 37 |     await expect(page.locator('#msg')).toHaveText('Login successful', {timeout: 600});
-     |                                        ^ Error: expect(locator).toHaveText(expected) failed
+  37 |     await expect(page.locator('#msg')).toHaveText('Login successful', {timeout: 600});
   38 |     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
   39 |     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"}); 
   40 |     //await page.close();

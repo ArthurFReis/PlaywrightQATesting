@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
      const context = await browser.newContext();
     await page.goto('http://localhost:8080/');
     await expect(page).toHaveURL('http://localhost:8080/');
-    await page.screenshot({path: "Evidencias/Products/BeforeEach.png"});
+    //await page.screenshot({path: "Evidencias/Products/BeforeEach.png"});
   });
 
 test.describe.parallel('Products', () => {
@@ -19,7 +19,7 @@ test.describe.parallel('Products', () => {
         await navigationPage.productsPage();
         for(const pesquisa in pesquisas.pesquisar) {
             await page.getByPlaceholder('Search products by name...').clear()
-            await page.getByPlaceholder('Search products by name...').fill(pesquisas.pesquisar[pesquisa]);
+            await page.getByPlaceholder('Search products by name...').fill(pesquisas.pesquisar[pesquisa], {timeout:400});
             await page.screenshot({path: `Evidencias/Products/FormasdePesquisarProdutos${pesquisas.pesquisar[pesquisa]}.png`});
         }
     });
