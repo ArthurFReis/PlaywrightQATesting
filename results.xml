@@ -1,43 +1,28 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="4.541322999998927">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-06T13:01:01.601Z" hostname="chromium" tests="1" failures="1" skipped="0" time="2.859" errors="0">
-<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="2.859">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="19.06876099999994">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-06T13:24:44.731Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.973" errors="0">
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="14.973">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-FrontEnd-login-Login-login-correto-chromium\error-context.md]]
+<![CDATA[Antes: /n {}
+Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
+Antes: /n {}
+Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
+Antes: /n {}
+Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
+Antes: /n {}
+Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
+Antes: /n {}
+Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
+Todos os botões estão ativados 
+
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
 ]]>
 </system-out>
-<failure message="expect(locator).toHaveText(expected) failed" type="expect.toHaveText">
-<![CDATA[  [chromium] › tests\FrontEnd\login.spec.ts:19:9 › Login › login correto ───────────────────────────
-
-    Error: expect(locator).toHaveText(expected) failed
-
-    Locator:  locator('#msg')
-    Expected: "Login successful"
-    Received: ""
-    Timeout:  600ms
-
-    Call log:
-      - Expect "toHaveText" with timeout 600ms
-      - waiting for locator('#msg')
-        4 × locator resolved to <div id="msg" class="" role="alert"></div>
-          - unexpected value ""
-
-
-       at app\Comum\Login\login.ts:15
-
-      13 |         else {
-      14 |             await page.locator('#btnLogin').click();
-    > 15 |             await expect(page.locator('#msg')).toHaveText('Login successful', {timeout:600});
-         |                                                ^
-      16 |         }
-      17 |         //await page.locator('#btnLogin').click();
-      18 |         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
-        at realizarLogin (C:\Users\013772631\Downloads\ecm-qa-test-main\app\Comum\Login\login.ts:15:48)
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\login.spec.ts:20:8
-
-    Error Context: test-results\tests-FrontEnd-login-Login-login-correto-chromium\error-context.md
-]]>
-</failure>
 </testcase>
 </testsuite>
 </testsuites>
