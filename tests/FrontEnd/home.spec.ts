@@ -10,6 +10,14 @@ test.beforeEach(async ({ page }) => {
          await page.screenshot({path: "Evidencias/Home/BeforeEach.png"});
   });
 
+  test('Comparar screenshot responsiva', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto('http://localhost:8080/');
+  await expect(page).toHaveURL('http://localhost:8080/');
+  await page.screenshot({path: "Evidencias/Home/home-mobile.png.png"});
+  console.log("É responsivo!")
+});
+
 test('Home', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.homePage();

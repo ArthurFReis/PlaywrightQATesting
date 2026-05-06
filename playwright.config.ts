@@ -46,6 +46,16 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
+    {
+      name: 'Desktop',
+      use: { viewport: { width: 1280, height: 720 } },
+    },
+    
+    {
+      name: 'Mobile',
+      use: devices['Pixel 5'],
+    },
+
   ],
 
   /* Run your local dev server before starting the tests */
