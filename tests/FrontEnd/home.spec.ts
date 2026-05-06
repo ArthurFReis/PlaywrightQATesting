@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
 
   
 test.describe.parallel('Login', () => {
-  test('Comparar screenshot responsiva', async ({ page }) => {
+  test('Comparar screenshot responsivo', async ({ page }) => {
 
     let tamanhos = {"width": [375,414,390,430], "height": [667,896,844,932]};
     for(const tamanho in tamanhos.width){
