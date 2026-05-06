@@ -1,5 +1,8 @@
 import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
+import { realizarLogin } from '../../app/Comum/Login/login';
+import { localStorageLogin } from '../../app/Comum/Login/login';
+
 
 
 test.beforeEach(async ({ page }) => {
@@ -7,6 +10,7 @@ test.beforeEach(async ({ page }) => {
   const context = await browser.newContext();
   await page.goto('http://localhost:8080/');
   await expect(page).toHaveURL('http://localhost:8080/');
+  
   await page.screenshot({path: "Evidencias/Checkout/BeforeEach.png"});
   });
 
@@ -15,16 +19,8 @@ test.describe.parallel('checkout', () => {
     test('cheout Authenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
-        await page.locator('#username').fill('valid_user');
-        await page.locator('#password').fill('secret123');
-        const btnLogin = await page.locator('#btnLogin').isDisabled();
-        if (btnLogin === true) {
-            console.log('O botão de login está desabilitado');
-        }
-        else {
-            await page.locator('#btnLogin').click();
-        }
-
+        await realizarLogin(page);
+       
         let idProduto = [];
         let nomeProduto = [];
         let precoProduto = [];
@@ -82,7 +78,7 @@ test.describe.parallel('checkout', () => {
                 default:
                     console.log('Id do produto não encontrado, verifique o id do produto');
             }
-        }
+        } 
         
         await navigationPage.checkoutPage();
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoCorreto.png"});
@@ -111,10 +107,17 @@ test.describe.parallel('checkout', () => {
             await expect(page.locator('#msg')).toHaveText('Order placed successfully');
         }
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
-    });
 
+        
+    });
+       
     test('cheout Unauthenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
+        await navigationPage.loginPage();
+        await localStorageLogin(page);
+         
+        await page.close();
+
         await navigationPage.productsPage();
 
         let idProduto = [];
@@ -205,5 +208,5 @@ test.describe.parallel('checkout', () => {
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
         
     }); 
-
+ 
 });

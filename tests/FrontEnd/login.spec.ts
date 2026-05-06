@@ -1,5 +1,7 @@
 import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
+import { realizarLogin } from '../../app/Comum/Login/login';
+import { localStorageLogin } from '../../app/Comum/Login/login';
 
 
 
@@ -15,24 +17,7 @@ test.beforeEach(async ({ request, page }) => {
 test.describe.parallel('Login', () => {
     
     test('login correto', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
-        await navigationPage.loginPage();
-        await page.fill('#username', 'valid_user');
-        await page.locator('#username').fill('valid_user');
-        await page.fill('#password',  'secret123');
-        await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
-        const btnLogin = await page.locator('#btnLogin').isDisabled();
-        if (btnLogin === true) {
-            console.log('O botão de login está desabilitado, verifique os campos de preenchimento');
-        }
-        else {
-            await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Login successful');
-        }
-        //await page.locator('#btnLogin').click();
-        await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
-        
-        
+       await realizarLogin(page);  
     });
 
     test('login usuario errado', async ({ page }) => {
@@ -64,30 +49,7 @@ test.describe.parallel('Login', () => {
         
     });
 test('login localstorage', async ({ page }) => {
-
-    const navigationPage = new NavegationPage(page);
-    await navigationPage.loginPage();
-
-    await page.evaluate(() => {
-        localStorage.setItem('username', 'valid_user');
-        localStorage.setItem('password', 'secret123');
-    });
-
-    let username: any =  "Hello";
-    let password: any =  "xpto";
-    
-     username = await page.evaluate(() => localStorage.getItem('username'));
-     password = await page.evaluate(() => localStorage.getItem('password'));
-    
-    await page.getByLabel('Username:').fill(username);
-    await page.getByLabel('Password:').fill(password);   
-    await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
-    await page.locator('#btnLogin').click();
-    await expect(page.locator('#msg')).toHaveText('Login successful');
-    await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
-    await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"});  
-    
-    await page.close();
-    });
+    await localStorageLogin(page);
+    }); 
 
 });
