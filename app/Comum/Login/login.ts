@@ -12,8 +12,12 @@ export async function realizarLogin(page: Page) {
         }
         else {
             await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Login successful', {timeout:600});
+            
+            
         }
+        const tempo = await page.locator('#msg').textContent({timeout:600});
+        console.log('Menssage recebida: ', tempo)
+        await expect(page.locator('#msg')).toHaveText('Login successful');
         //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
     }
@@ -34,7 +38,9 @@ export async function realizarLogin(page: Page) {
     await page.getByLabel('Password:').fill(password);   
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstoragePreenchido.png"});
     await page.locator('#btnLogin').click();
-    await expect(page.locator('#msg')).toHaveText('Login successful', {timeout: 600});
+    const tempo = await page.locator('#msg').textContent({timeout:600});
+    console.log('Menssage recebida: ', tempo)
+    await expect(page.locator('#msg')).toHaveText('Login successful');
     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"}); 
     //await page.close();

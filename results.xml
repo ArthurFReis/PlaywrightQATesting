@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="19.06876099999994">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-06T13:24:44.731Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.973" errors="0">
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="14.973">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="18.8873040000014">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-06T14:13:20.829Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.342" errors="0">
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="15.342">
 <system-out>
 <![CDATA[Antes: /n {}
 Depois: /n {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}

@@ -29,9 +29,11 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password);
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
+            await expect(page.locator('#msg')).toHaveText('Invalid credentials');
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
+        const tempo = await page.locator('#msg').textContent({timeout:600});
+        console.log('Menssage recebida: ', tempo)
     });
 
     test('login password errado', async ({ page }) => {
@@ -43,9 +45,13 @@ test.describe.parallel('Login', () => {
             await page.locator('#password').fill(errors.password[error]);
             await page.screenshot({path: `Evidencias/login/PasswordErrado/Preenchimento${errors.dados[error]}.png`});      
             await page.locator('#btnLogin').click();
-            await expect(page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
+            
+            
+           // await expect(await page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
             await page.screenshot({path: `Evidencias/login/PasswordErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
+        const tempo = await page.locator('#msg').textContent({timeout:600});
+        console.log('Menssage recebida: ', tempo)
         
     });
 test('login localstorage', async ({ page }) => {

@@ -1,7 +1,7 @@
 import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 import { AdicionarProdutosnoCarrinho } from '../../app/Comum/Products/products';
-import { defineConfig, devices } from '@playwright/test';
+
 
 test.beforeEach(async ({ page }) => {
      const browser = await webkit.launch();
