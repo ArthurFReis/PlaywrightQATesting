@@ -2,6 +2,7 @@ import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 import { realizarLogin } from '../../app/Comum/Login/login';
 import { localStorageLogin } from '../../app/Comum/Login/login';
+import { pageResponsivoLogin } from '../../app/Comum/Login/login';
 
 
 
@@ -16,6 +17,10 @@ test.beforeEach(async ({ request, page }) => {
   }); 
 
 test.describe.parallel('Login', () => {
+
+    test('login responsivo', async ({ page }) => {
+        await pageResponsivoLogin(page);
+    });
 
     test('login correto', async ({ page }) => {
        await realizarLogin(page);  

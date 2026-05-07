@@ -1,5 +1,7 @@
 import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
+import { pageResponsivoHome } from '../../app/Comum/Home/home';
+
 
 
 test.beforeEach(async ({ page }) => {
@@ -12,22 +14,15 @@ test.beforeEach(async ({ page }) => {
 
   
 test.describe.parallel('Login', () => {
-  test('Comparar screenshot responsivo', async ({ page }) => {
 
-    let tamanhos = {"width": [375,414,390,430], "height": [667,896,844,932]};
-    for(const tamanho in tamanhos.width){
-      await page.setViewportSize({ width: tamanhos.width[tamanho], height: tamanhos.height[tamanho]});
-      await page.goto('http://localhost:8080/');
-      await expect(page).toHaveURL('http://localhost:8080/');
-      await page.screenshot({path: `Evidencias/Home/home-mobile${tamanhos.width[tamanho]}.png`});
-      await page.screenshot({path: `Evidencias/Home/home-mobile2${tamanhos.height[tamanho]}.png`});
-    
-  }
-  console.log("É responsivo! \n");
-});
+test('Home Responsivo', async ({ page }) => {
+        await page.goto('http://localhost:8080/');
+         await expect(page).toHaveURL('http://localhost:8080/');
+        await pageResponsivoHome(page);
+    });
 
 test('Home', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
+        const navigationPage = new NavegationPage(page);  
         await navigationPage.homePage();
         await expect(page).toHaveURL('http://localhost:8080/index.html');
         await page.screenshot({path: "Evidencias/Home/Menuhome.png"});

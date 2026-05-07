@@ -2,6 +2,7 @@ import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 import { realizarLogin } from '../../app/Comum/Login/login';
 import { localStorageLogin } from '../../app/Comum/Login/login';
+import { pageResponsivoCheckout } from '../../app/Comum/Checkout/checkout';
 
 
 
@@ -15,6 +16,12 @@ test.beforeEach(async ({ page }) => {
   });
 
 test.describe.parallel('checkout', () => {
+
+     test('Checkout Responsivo', async ({ page }) => {
+            const navigationPage = new NavegationPage(page);
+            await navigationPage.checkoutPage();
+            await pageResponsivoCheckout(page);
+        });
 
     test('cheout Authenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);
