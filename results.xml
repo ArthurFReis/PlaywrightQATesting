@@ -1,9 +1,146 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.35216799999983">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-07T11:07:31.407Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.775" errors="0">
-<testcase name="checkout › Checkout Responsivo" classname="tests\FrontEnd\checkout.spec.ts" time="3.775">
+<testsuites id="" name="" tests="13" failures="0" skipped="0" errors="1" time="34.48589100000006">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-07T11:09:21.557Z" hostname="chromium" tests="3" failures="0" skipped="0" time="9.567" errors="1">
+<testcase name="checkout › Checkout Responsivo" classname="tests\FrontEnd\checkout.spec.ts" time="3.229">
 <system-out>
 <![CDATA[É responsivo! 
 
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="4.455">
+<system-out>
+<![CDATA[Menssage recebida: 
+  
+O valor do total está correto! 
+
+A mensagem recebida: 
+ 
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="1.883">
+<system-out>
+<![CDATA[Menssage recebida: 
+ 
+
+[[ATTACHMENT|test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.isDisabled: Target page, context or browser has been closed" type="Error">
+<![CDATA[  [chromium] › tests\FrontEnd\checkout.spec.ts:122:9 › checkout › cheout Unauthenticated ───────────
+
+    Error: locator.isDisabled: Target page, context or browser has been closed
+
+      136 |             id = ids[i];
+      137 |
+    > 138 |             if(await page.locator(`[data-id="${id}"]`).isDisabled()) {
+          |                                                        ^
+      139 |                 console.log(`O botão de adicionar ao carrinho do produto com ID ${id} está desabilitado!`);
+      140 |             }
+      141 |             
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\checkout.spec.ts:138:56
+
+    Error Context: test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T11:09:21.557Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.841" errors="0">
+<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.159">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Home" classname="tests\FrontEnd\home.spec.ts" time="1.682">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-07T11:09:21.557Z" hostname="chromium" tests="5" failures="0" skipped="0" time="12.161" errors="0">
+<testcase name="Login › login responsivo" classname="tests\FrontEnd\login.spec.ts" time="0.796">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="1.891">
+<system-out>
+<![CDATA[Menssage recebida: 
+  
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="4.046">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.925">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="1.503">
+<system-out>
+<![CDATA[Menssage recebida: 
+ 
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-07T11:09:21.557Z" hostname="chromium" tests="3" failures="0" skipped="0" time="3.865" errors="0">
+<testcase name="Products › Products Responsivo" classname="tests\FrontEnd\products.spec.ts" time="1.08">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="1.574">
+<system-out>
+<![CDATA[Pesquisa com sucesso!
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="1.211">
+<system-out>
+<![CDATA[Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
+Todos os botões estão ativados 
+
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
 ]]>
 </system-out>
 </testcase>
