@@ -1,13 +1,13 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="6.575752000000095">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T17:47:46.920Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.571" errors="0">
-<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.102">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="6.517834000000032">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T17:49:17.273Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.559" errors="0">
+<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.081">
 <system-out>
 <![CDATA[É responsivo! 
 
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="1.469">
+<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="1.478">
 <system-out>
 <![CDATA[Todas as páginas estão funcionando! 
 

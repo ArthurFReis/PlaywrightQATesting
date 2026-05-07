@@ -16,12 +16,8 @@ test.describe.parallel('Login', () => {
 test('Home Responsivo', async ({ page }) => {
   await page.goto('http://localhost:8080/index.html');
   await expect(page).toHaveURL('http://localhost:8080/index.html');
-
-    await pageResponsivoHome(page);
- 
-
-         
-    });
+  await pageResponsivoHome(page);   
+});
 
 test('Menu', async ({ page }) => {
     await page.goto('http://localhost:8080/index.html');
