@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
          const context = await browser.newContext();
          await page.goto('http://localhost:8080/index.html');
          await expect(page).toHaveURL('http://localhost:8080/index.html');
-         await page.screenshot({path: "Evidencias/Home-Index/BeforeEach.png"});
+         await page.screenshot({path: "Evidencias/Home/BeforeEach.png"});
   });
 
 test.describe.parallel('Login', () => {
@@ -28,7 +28,7 @@ test('Menu', async ({ page }) => {
    test.afterAll(async ({ page }) => {
       await page.goto('http://localhost:8080/index.html');
       await expect(page).toHaveURL('http://localhost:8080/index.html');
-      await page.screenshot({path: "Evidencias/Home-Index/AfterAll.png"});  
+      await page.screenshot({path: "Evidencias/Home/AfterAll.png"});  
   });
 
 });
