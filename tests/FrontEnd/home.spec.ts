@@ -15,15 +15,15 @@ test.beforeEach(async ({ page }) => {
 test.describe.parallel('Login', () => {
 
 test('Home Responsivo', async ({ page }) => {
-         await page.goto('http://localhost:8080/');
-         await expect(page).toHaveURL('http://localhost:8080/');
          await page.goto('http://localhost:8080/index.html');
          await expect(page).toHaveURL('http://localhost:8080/index.html');
-        await pageResponsivoHome(page);
+         await pageResponsivoHome(page);
     });
 
 test('Menu', async ({ page }) => {
-       await testeBotoesMenuHome(page);
+    await page.goto('http://localhost:8080/index.html');
+    await expect(page).toHaveURL('http://localhost:8080/index.html');
+    await testeBotoesMenuHome(page);
   });
 
    test.afterAll(async ({ page }) => {
