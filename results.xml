@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.228019999999553">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T11:48:44.305Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.356" errors="0">
-<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.356">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.312283999999985">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T11:50:04.731Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.319" errors="0">
+<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.319">
 <system-out>
 <![CDATA[É responsivo! 
 
