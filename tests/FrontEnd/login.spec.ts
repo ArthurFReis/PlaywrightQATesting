@@ -3,6 +3,7 @@ import { NavegationPage } from './navegationPage';
 import { realizarLogin } from '../../app/Comum/Login/login';
 import { localStorageLogin } from '../../app/Comum/Login/login';
 import { pageResponsivoLogin } from '../../app/Comum/Login/login';
+import { testeBotoesMenuLogin } from '../../app/Comum/Login/login';
 
 
 
@@ -21,6 +22,10 @@ test.describe.parallel('Login', () => {
     test('login responsivo', async ({ page }) => {
         await pageResponsivoLogin(page);
     });
+
+    test('Menu', async ({ page }) => {
+           await testeBotoesMenuLogin(page);
+      });
 
     test('login correto', async ({ page }) => {
        await realizarLogin(page);  

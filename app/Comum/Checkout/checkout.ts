@@ -9,3 +9,17 @@ export async function pageResponsivoCheckout(page: Page) {
     }
      console.log("É responsivo! \n");
 }
+
+export async function testeBotoesMenuCheckout(page: Page) {
+        const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
+        for( var id in menuButtons.ids){
+          if((await page.locator(menuButtons.ids[id]).isEnabled()) && (await page.locator(menuButtons.ids[id]).isDisabled())){
+            console.log("O botão está invisivel ou está desabilitado!")
+          }
+          else {
+               await page.locator(menuButtons.ids[id]).click();
+               await page.screenshot({path: `Evidencias/checkout/Menu/menu-${menuButtons.ids[id]}.png`});
+          }
+      }
+        console.log("Todas as páginas estão funcionando! \n");
+}

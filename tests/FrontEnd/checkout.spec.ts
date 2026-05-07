@@ -3,6 +3,7 @@ import { NavegationPage } from './navegationPage';
 import { realizarLogin } from '../../app/Comum/Login/login';
 import { localStorageLogin } from '../../app/Comum/Login/login';
 import { pageResponsivoCheckout } from '../../app/Comum/Checkout/checkout';
+import { testeBotoesMenuCheckout } from '../../app/Comum/Checkout/checkout';
 
 
 
@@ -22,6 +23,12 @@ test.describe.parallel('checkout', () => {
             await navigationPage.checkoutPage();
             await pageResponsivoCheckout(page);
         });
+
+        test('Menu', async ({ page }) => {
+                const navigationPage = new NavegationPage(page);
+                await navigationPage.checkoutPage();
+                await testeBotoesMenuCheckout(page);
+                  });
 
     test('cheout Authenticated', async ({ page }) => {
         const navigationPage = new NavegationPage(page);

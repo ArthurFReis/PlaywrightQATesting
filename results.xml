@@ -1,8 +1,8 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.312283999999985">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T11:50:04.731Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.319" errors="0">
-<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.319">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.109956999999937">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T15:04:42.622Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.128" errors="0">
+<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="3.128">
 <system-out>
-<![CDATA[É responsivo! 
+<![CDATA[Todas as páginas estão funcionando! 
 
 ]]>
 </system-out>

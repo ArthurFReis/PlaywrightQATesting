@@ -2,6 +2,7 @@ import { test, expect, webkit } from '@playwright/test';
 import { NavegationPage } from './navegationPage';
 import { AdicionarProdutosnoCarrinho } from '../../app/Comum/Products/products';
 import { pageResponsivoProducts } from '../../app/Comum/Products/products';
+import { testeBotoesMenuProducts } from '../../app/Comum/Products/products';
 
 
 test.beforeEach(async ({ page }) => {
@@ -19,6 +20,12 @@ test.describe.parallel('Products', () => {
         await navigationPage.productsPage();
         await pageResponsivoProducts(page);
     });
+
+    test('Menu', async ({ page }) => {
+        const navigationPage = new NavegationPage(page);
+        await navigationPage.productsPage();
+        await testeBotoesMenuProducts(page);
+          });
 
     test('products pesquisa pelo nome completo correto', async ({ page }) => {
         let pesquisas = {"pesquisar": ["mouse", "mou", "banha de porco", ""]};

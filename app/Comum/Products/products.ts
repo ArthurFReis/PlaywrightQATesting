@@ -84,6 +84,18 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
         }
         console.log('\n O valor do cart é:', await page.locator('#cart-count').textContent());
         await page.screenshot({path: "Evidencias/Products/AdicionarProdutoCart.png"});
-
-
     }
+
+    export async function testeBotoesMenuProducts(page: Page) {
+        const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
+        for( var id in menuButtons.ids){
+          if((await page.locator(menuButtons.ids[id]).isEnabled()) && (await page.locator(menuButtons.ids[id]).isDisabled())){
+            console.log("O botão está invisivel ou está desabilitado!")
+          }
+          else {
+               await page.locator(menuButtons.ids[id]).click();
+               await page.screenshot({path: `Evidencias/Products/Menu/menu-${menuButtons.ids[id]}.png`});
+          }
+      }
+        console.log("Todas as páginas estão funcionando! \n");
+}
