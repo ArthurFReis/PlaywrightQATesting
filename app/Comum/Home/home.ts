@@ -5,9 +5,9 @@ export async function pageResponsivoHome(page: Page) {
     for(const tamanho in tamanhos.width){
       await page.setViewportSize({ width: tamanhos.width[tamanho], height: tamanhos.height[tamanho]});
       await page.screenshot({path: `Evidencias/Home/Responsivo/home-mobile-${tamanhos.nomes[tamanho]}.png`});
-      
+    }
      console.log("É responsivo! \n");
-}}
+}
 
 export async function testeBotoesMenuHome(page: Page) {
     const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
