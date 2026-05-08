@@ -128,9 +128,10 @@ test.describe.parallel('checkout', () => {
        
     test('cheout Unauthenticated', async ({ page }) => {
         let navigationPage = new NavegationPage(page);
+       // await navigationPage.productsPage();
         await navigationPage.loginPage();
         await localStorageLogin(page);
-        //await page.close();
+        await page.close();
 
         let idProduto = [];
         let nomeProduto = [];
