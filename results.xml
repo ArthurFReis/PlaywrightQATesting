@@ -1,9 +1,183 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.386282999999996">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-07T18:14:08.827Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.135" errors="0">
-<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.135">
+<testsuites id="" name="" tests="16" failures="1" skipped="0" errors="0" time="43.51769200000004">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-08T10:54:36.182Z" hostname="chromium" tests="4" failures="1" skipped="0" time="17.161" errors="0">
+<testcase name="checkout › Checkout Responsivo" classname="tests\FrontEnd\checkout.spec.ts" time="3.171">
 <system-out>
 <![CDATA[É responsivo! 
 
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout › Menu" classname="tests\FrontEnd\checkout.spec.ts" time="1.864">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="3.973">
+<system-out>
+<![CDATA[Menssage recebida: 
+  
+O valor do total está correto! 
+
+A mensagem recebida: 
+ 
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="8.153">
+<system-out>
+<![CDATA[Menssage recebida: 
+ 
+O valor do total está correto! 
+
+
+[[ATTACHMENT|test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toHaveText(expected) failed" type="expect.toHaveText">
+<![CDATA[  [chromium] › tests\FrontEnd\checkout.spec.ts:129:9 › checkout › cheout Unauthenticated ───────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('#msg')
+    Expected: "User not authenticated"
+    Received: "Order placed successfully"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 5000ms
+      - waiting for locator('#msg')
+        4 × locator resolved to <div id="msg" class="" role="status"></div>
+          - unexpected value ""
+        5 × locator resolved to <div id="msg" role="status" class="success">Order placed successfully</div>
+          - unexpected value "Order placed successfully"
+
+
+      217 |             await page.click('#btnFinish');
+      218 |             await page.locator('#msg').textContent({timeout:500})
+    > 219 |             await expect(page.locator('#msg')).toHaveText('User not authenticated' );
+          |                                                ^
+      220 |         }
+      221 |         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder2.png"});
+      222 |         
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\checkout.spec.ts:219:48
+
+    Error Context: test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-08T10:54:36.182Z" hostname="chromium" tests="2" failures="0" skipped="0" time="3.011" errors="0">
+<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="1.182">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="1.829">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-08T10:54:36.182Z" hostname="chromium" tests="6" failures="0" skipped="0" time="13.859" errors="0">
+<testcase name="Login › login responsivo" classname="tests\FrontEnd\login.spec.ts" time="0.827">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Menu" classname="tests\FrontEnd\login.spec.ts" time="1.596">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="1.576">
+<system-out>
+<![CDATA[Menssage recebida: 
+  
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="4.176">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="4.036">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="1.648">
+<system-out>
+<![CDATA[Menssage recebida: 
+ 
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-08T10:54:36.182Z" hostname="chromium" tests="4" failures="0" skipped="0" time="5.528" errors="0">
+<testcase name="Products › Products Responsivo" classname="tests\FrontEnd\products.spec.ts" time="1.107">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › Menu" classname="tests\FrontEnd\products.spec.ts" time="1.876">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="1.258">
+<system-out>
+<![CDATA[Pesquisa com sucesso!
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="1.287">
+<system-out>
+<![CDATA[Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
+Todos os botões estão ativados 
+
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
 ]]>
 </system-out>
 </testcase>

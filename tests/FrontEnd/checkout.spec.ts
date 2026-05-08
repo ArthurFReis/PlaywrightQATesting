@@ -19,19 +19,19 @@ test.beforeEach(async ({ page }) => {
 test.describe.parallel('checkout', () => {
 
      test('Checkout Responsivo', async ({ page }) => {
-            const navigationPage = new NavegationPage(page);
-            await navigationPage.checkoutPage();
-            await pageResponsivoCheckout(page);
+           let navigationPage = new NavegationPage(page);
+           await navigationPage.checkoutPage();
+           await pageResponsivoCheckout(page);
         });
 
         test('Menu', async ({ page }) => {
-                const navigationPage = new NavegationPage(page);
+                let navigationPage = new NavegationPage(page);
                 await navigationPage.checkoutPage();
                 await testeBotoesMenuCheckout(page);
                   });
 
     test('cheout Authenticated', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
+        let navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         await realizarLogin(page);
        
@@ -112,14 +112,14 @@ test.describe.parallel('checkout', () => {
             console.log('Existe alguma coisa errada na soma do(s) valore(s) do(s) preço(s) do(s) produto(s) \n');
         }
 
-       const btnfinish = await page.locator('#btnFinish').isDisabled();
+       let btnfinish = await page.locator('#btnFinish').isDisabled();
        if (btnfinish === true) {
             console.log('O botão de finalizar pedido está desabilitado');
         }
         else {
             await page.click('#btnFinish'); 
         }
-        const mensagem = await page.locator('#msg').textContent({timeout: 500});
+        let mensagem = await page.locator('#msg').textContent({timeout: 500});
         console.log("A mensagem recebida: \n",  mensagem);
         await expect(page.locator('#msg')).toHaveText('Order placed successfully');
         await page.screenshot({path: "Evidencias/checkout/CheckoutProdutoBotaoCompleteOrder.png"});
@@ -127,10 +127,10 @@ test.describe.parallel('checkout', () => {
     });
        
     test('cheout Unauthenticated', async ({ page }) => {
-        const navigationPage = new NavegationPage(page);
+        let navigationPage = new NavegationPage(page);
         await navigationPage.loginPage();
         await localStorageLogin(page);
-        await page.close();
+        //await page.close();
 
         let idProduto = [];
         let nomeProduto = [];
@@ -209,7 +209,7 @@ test.describe.parallel('checkout', () => {
             console.log('Existe alguma coisa errada na soma do(s) valore(s) do(s) preço(s) do(s) produto(s) \n');
         }
 
-       const btnfinish = await page.locator('#btnFinish').isDisabled();
+       let btnfinish = await page.locator('#btnFinish').isDisabled();
        if (btnfinish === true) {
             console.log('O botão de finalizar pedido está desabilitado');
         }

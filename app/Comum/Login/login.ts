@@ -2,8 +2,8 @@ import { Page, expect } from '@playwright/test';
 
 // Função exportada que pode ser usada em qualquer lugar
 export async function realizarLogin(page: Page) {
-    const usuario = await page.locator('#username').isEditable();
-    const senha = await page.locator('#password').isEditable();
+    let usuario = await page.locator('#username').isEditable();
+    let senha = await page.locator('#password').isEditable();
     if (usuario === true && senha === true){
         await page.fill('#username', 'valid_user');
         await page.locator('#username').fill('valid_user');
@@ -26,9 +26,9 @@ export async function realizarLogin(page: Page) {
     }
 
     export async function testeBotoesMenuLogin(page: Page) {
-    const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
+        let menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
       
-       for( var id in menuButtons.ids){
+        for( var id in menuButtons.ids){
           if((await page.locator(menuButtons.ids[id]).isEnabled()) && (await page.locator(menuButtons.ids[id]).isDisabled())){
             console.log("O botão está invisivel ou está desabilitado!")
           }

@@ -11,8 +11,8 @@ export async function pageResponsivoCheckout(page: Page) {
 }
 
 export async function testeBotoesMenuCheckout(page: Page) {
-        const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
-        for( var id in menuButtons.ids){
+        let menuButtons = {"ids": ['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
+        for( const id in menuButtons.ids){
           if((await page.locator(menuButtons.ids[id]).isEnabled()) && (await page.locator(menuButtons.ids[id]).isDisabled())){
             console.log("O botão está invisivel ou está desabilitado!")
           }

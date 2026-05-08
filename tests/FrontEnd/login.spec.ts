@@ -35,7 +35,7 @@ test.describe.parallel('Login', () => {
         let errors = {"user": ["valid", "invalid", "user1", ""], "password": "secret123", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
         //const navigationPage = new NavegationPage(page);
        // await navigationPage.loginPage();
-        for (const error in errors.user) {
+        for (let error in errors.user) {
             await page.locator('#username').fill(errors.user[error]);
             await page.locator('#password').fill(errors.password);
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/Preenchimento${errors.dados[error]}.png`});      
@@ -43,7 +43,7 @@ test.describe.parallel('Login', () => {
             await expect(page.locator('#msg')).toHaveText('Invalid credentials');
             await page.screenshot({path: `Evidencias/login/UsuarioErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
-        const tempo = await page.locator('#msg').textContent({timeout:600});
+        let tempo = await page.locator('#msg').textContent({timeout:600});
         console.log('Menssage recebida: ', tempo)
     });
 
@@ -51,7 +51,7 @@ test.describe.parallel('Login', () => {
         let errors = {"password": ["secret1", "secret12", "secrect", ""], "user": "valid_user", "msn": ["ms1", "ms2", "ms3", "ms4"], "dados": ["dados1", "dados2", "dados3", "dados4"]};
        // const navigationPage = new NavegationPage(page);
        // await navigationPage.loginPage();
-        for (const error in errors.password) {
+        for (let error in errors.password) {
             await page.locator('#username').fill(errors.user);
             await page.locator('#password').fill(errors.password[error]);
             await page.screenshot({path: `Evidencias/login/PasswordErrado/Preenchimento${errors.dados[error]}.png`});      
@@ -61,7 +61,7 @@ test.describe.parallel('Login', () => {
            // await expect(await page.locator('#msg')).toHaveText('Invalid credentials', {timeout:600});
             await page.screenshot({path: `Evidencias/login/PasswordErrado/PreenchimentoMessage${errors.msn[error]}.png`});
         }
-        const tempo = await page.locator('#msg').textContent({timeout:600});
+        let tempo = await page.locator('#msg').textContent({timeout:600});
         console.log('Menssage recebida: ', tempo)
         
     });

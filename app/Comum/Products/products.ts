@@ -17,7 +17,7 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
         let id = 0;
         let ids = [1, 2, 3, 4, 5];
         let cartCount = 0;
-        const stateBefore = await page.evaluate(() => JSON.stringify(window.localStorage));
+        let stateBefore = await page.evaluate(() => JSON.stringify(window.localStorage));
 
         for (let i = 0; i < ids.length; i++) {
             id = ids[i];
@@ -70,7 +70,7 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
                     console.log('Id do produto não encontrado, verifique o id do produto');
             }
 
-            const stateAfter = await page.evaluate(() => JSON.stringify(window.localStorage));
+            let stateAfter = await page.evaluate(() => JSON.stringify(window.localStorage));
             expect(stateBefore).not.toBe(stateAfter)
             console.log('Antes: \n', stateBefore);
             console.log('Depois: \n', stateAfter);
@@ -87,7 +87,7 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
     }
 
     export async function testeBotoesMenuProducts(page: Page) {
-        const menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
+        let menuButtons = {"ids":['#nav-home', '#nav-login', '#nav-products', '#nav-checkout']};
         for( var id in menuButtons.ids){
           if((await page.locator(menuButtons.ids[id]).isEnabled()) && (await page.locator(menuButtons.ids[id]).isDisabled())){
             console.log("O botão está invisivel ou está desabilitado!")
