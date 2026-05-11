@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="4.5533859999999695">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-08T14:35:44.578Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.442" errors="1">
-<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="2.442">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="5.757594999999972">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-11T13:23:19.538Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.787" errors="1">
+<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="3.787">
 <system-out>
 <![CDATA[Menssage recebida: 
  
