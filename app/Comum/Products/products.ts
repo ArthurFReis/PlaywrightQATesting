@@ -84,7 +84,8 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
         }
 
         let cart =  await page.locator('#cart-count').textContent();
-        console.log('\n O valor do cart é:', cart);
+        expect(cart).toBe(String(idProduto.length));
+        console.log('\n O valor do cart é:', String(idProduto.length));
         await page.screenshot({path: "Evidencias/Products/AdicionarProdutoCart.png"});
     }
 

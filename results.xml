@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="2.811001999999862">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T09:47:37.220Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.937" errors="0">
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.937">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.1268339999998">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:31:23.027Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.324" errors="0">
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="15.324">
 <system-out>
 <![CDATA[Antes: 
  {}
