@@ -1,30 +1,40 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="5.757594999999972">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-11T13:23:19.538Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.787" errors="1">
-<testcase name="checkout › cheout Unauthenticated" classname="tests\FrontEnd\checkout.spec.ts" time="3.787">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="15.787729999999982">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T09:37:11.526Z" hostname="chromium" tests="1" failures="0" skipped="0" time="13.998" errors="0">
+<testcase name="Products › products adicionar produto no carrinho e dar um refresh" classname="tests\FrontEnd\products.spec.ts" time="13.998">
 <system-out>
-<![CDATA[Menssage recebida: 
- 
+<![CDATA[Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
+Todos os botões estão ativados 
 
-[[ATTACHMENT|test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md]]
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
+
+ O valor do carrinho depois do refresh é:  5
 ]]>
 </system-out>
-<error message="locator.isDisabled: Target page, context or browser has been closed" type="Error">
-<![CDATA[  [chromium] › tests\FrontEnd\checkout.spec.ts:129:9 › checkout › cheout Unauthenticated ───────────
-
-    Error: locator.isDisabled: Target page, context or browser has been closed
-
-      144 |             id = ids[i];
-      145 |
-    > 146 |             if(await page.locator(`[data-id="${id}"]`).isDisabled()) {
-          |                                                        ^
-      147 |                 console.log(`O botão de adicionar ao carrinho do produto com ID ${id} está desabilitado!`);
-      148 |             }
-      149 |             
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\checkout.spec.ts:146:56
-
-    Error Context: test-results\tests-FrontEnd-checkout-checkout-cheout-Unauthenticated-chromium\error-context.md
-]]>
-</error>
 </testcase>
 </testsuite>
 </testsuites>

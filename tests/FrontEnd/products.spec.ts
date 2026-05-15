@@ -45,4 +45,13 @@ test.describe.parallel('Products', () => {
         await AdicionarProdutosnoCarrinho(page);
     });
 
+    test('products adicionar produto no carrinho e dar um refresh', async ({ page }) => {
+        let navigationPage = new NavegationPage(page);
+        await navigationPage.productsPage();
+        await AdicionarProdutosnoCarrinho(page);
+        await page.reload();
+        let valorCart = await page.locator('#cart-count').innerText();
+        console.log("\n O valor do carrinho depois do refresh é: ", valorCart);
+    });
+
 });
