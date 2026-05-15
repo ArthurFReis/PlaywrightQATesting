@@ -11,6 +11,13 @@ export async function pageResponsivoProducts(page: Page) {
 }
 
 export async function AdicionarProdutosnoCarrinho(page: Page) {
+
+        let zerado =  await page.locator('#cart-count').textContent();
+        expect(zerado).toBe("0");
+        console.log('\n O valor do cart é:', String(zerado));
+        console.log(' \n');
+        await page.screenshot({path: "Evidencias/Products/AdicionarProdutoZerado.png"});
+
         let idProduto = [];
         let nomeProduto = [];
         let precoProduto = [];

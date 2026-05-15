@@ -1,34 +1,82 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="6.440185000000522">
-<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-15T14:32:57.308Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.811" errors="0">
-<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="4.811">
+<testsuites id="" name="" tests="4" failures="1" skipped="0" errors="0" time="8.697017000000924">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T17:59:05.889Z" hostname="chromium" tests="4" failures="1" skipped="0" time="6.816" errors="0">
+<testcase name="Products › Products Responsivo" classname="tests\FrontEnd\products.spec.ts" time="3.591">
 <system-out>
-<![CDATA[Menssage recebida: 
-  
+<![CDATA[É responsivo! 
 
-[[ATTACHMENT|test-results\tests-FrontEnd-checkout-checkout-cheout-Authenticated-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › Menu" classname="tests\FrontEnd\products.spec.ts" time="1.548">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="0.845">
+<system-out>
+<![CDATA[Pesquisa com sucesso!
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.832">
+<system-out>
+<![CDATA[
+ O valor do cart é: 0
+ 
+
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
+Antes: 
+ {}
+Depois: 
+ {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
+Todos os botões estão ativados 
+
+Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
+Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
+Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
+Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
+Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
+
+ O valor do cart é: 5
+
+[[ATTACHMENT|test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md]]
 ]]>
 </system-out>
 <failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
-<![CDATA[  [chromium] › tests\FrontEnd\checkout.spec.ts:33:9 › checkout › cheout Authenticated ──────────────
+<![CDATA[  [chromium] › tests\FrontEnd\products.spec.ts:42:9 › Products › products adicionar produto no carrinho 
 
     Error: expect(received).toBe(expected) // Object.is equality
 
-    Expected: "Login successful"
-    Received: ""
+    Expected: "0"
+    Received: "5"
 
-       at app\Comum\Login\login.ts:23
+      46 |         await page.reload();
+      47 |         let valorCart = await page.locator('#cart-count').innerText();
+    > 48 |         await expect(valorCart).toBe('0');
+         |                                 ^
+      49 |         console.log("\n O valor do carrinho depois do refresh é: ", valorCart);
+      50 |     });
+      51 |
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\products.spec.ts:48:33
 
-      21 |         const tempo = await page.locator('#msg').innerText({timeout:600});
-      22 |         console.log('Menssage recebida: \n ', tempo)
-    > 23 |         await expect(tempo).toBe('Login successful');
-         |                             ^
-      24 |         //await page.locator('#btnLogin').click();
-      25 |         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
-      26 |     }
-        at realizarLogin (C:\Users\013772631\Downloads\ecm-qa-test-main\app\Comum\Login\login.ts:23:29)
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\checkout.spec.ts:36:9
-
-    Error Context: test-results\tests-FrontEnd-checkout-checkout-cheout-Authenticated-chromium\error-context.md
+    Error Context: test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md
 ]]>
 </failure>
 </testcase>

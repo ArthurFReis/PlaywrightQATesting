@@ -13,7 +13,7 @@ test.beforeEach(async ({ request, page }) => {
     const context = await browser.newContext();
     await page.goto('http://localhost:8080/login.html');
     await expect(page).toHaveURL('http://localhost:8080/login.html');
-   // await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
+    await page.screenshot({path: "Evidencias/login/BeforeEach.png"});
     //await browser.close();
   }); 
 
