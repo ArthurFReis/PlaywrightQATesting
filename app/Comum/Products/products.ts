@@ -70,19 +70,21 @@ export async function AdicionarProdutosnoCarrinho(page: Page) {
                     console.log('Id do produto não encontrado, verifique o id do produto');
             }
 
+
             let stateAfter = await page.evaluate(() => JSON.stringify(window.localStorage));
             expect(stateBefore).not.toBe(stateAfter)
             console.log('Antes: \n', stateBefore);
             console.log('Depois: \n', stateAfter);
         }
 
-
         console.log('Todos os botões estão ativados \n');
 
         for (let i = 0; i < idProduto.length; i++) {
             console.log(`Produto adicionado ao carrinho: ID: ${idProduto[i]}, Nome: ${nomeProduto[i]}, Preço: R$${precoProduto[i]}, Quantidade: ${cartCount}`);
         }
-        console.log('\n O valor do cart é:', await page.locator('#cart-count').textContent());
+
+        let cart =  await page.locator('#cart-count').textContent();
+        console.log('\n O valor do cart é:', cart);
         await page.screenshot({path: "Evidencias/Products/AdicionarProdutoCart.png"});
     }
 
