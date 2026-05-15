@@ -1,96 +1,44 @@
-<testsuites id="" name="" tests="6" failures="1" skipped="0" errors="0" time="12.493743999999017">
-<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-15T11:52:41.019Z" hostname="chromium" tests="2" failures="0" skipped="0" time="5.153" errors="0">
-<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.281">
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="16.645464999999966">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T12:06:51.260Z" hostname="chromium" tests="6" failures="0" skipped="0" time="14.454" errors="0">
+<testcase name="Login › login responsivo" classname="tests\FrontEnd\login.spec.ts" time="2.941">
 <system-out>
 <![CDATA[É responsivo! 
 
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="1.872">
+<testcase name="Login › Menu" classname="tests\FrontEnd\login.spec.ts" time="1.474">
 <system-out>
 <![CDATA[Todas as páginas estão funcionando! 
 
 ]]>
 </system-out>
 </testcase>
-</testsuite>
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:52:41.019Z" hostname="chromium" tests="4" failures="1" skipped="0" time="4.686" errors="0">
-<testcase name="Products › Products Responsivo" classname="tests\FrontEnd\products.spec.ts" time="1.019">
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="1.39">
 <system-out>
-<![CDATA[É responsivo! 
-
+<![CDATA[Menssage recebida: 
+  
 ]]>
 </system-out>
 </testcase>
-<testcase name="Products › Menu" classname="tests\FrontEnd\products.spec.ts" time="1.694">
+<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="3.657">
 <system-out>
-<![CDATA[Todas as páginas estão funcionando! 
-
+<![CDATA[Menssage recebida:  Invalid credentials
 ]]>
 </system-out>
 </testcase>
-<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="1.129">
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.61">
 <system-out>
-<![CDATA[Pesquisa com sucesso!
+<![CDATA[Menssage recebida:  Invalid credentials
 ]]>
 </system-out>
 </testcase>
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.844">
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="1.382">
 <system-out>
-<![CDATA[Antes: 
- {}
-Depois: 
- {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9}]"}
-Antes: 
- {}
-Depois: 
- {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5}]"}
-Antes: 
- {}
-Depois: 
- {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299}]"}
-Antes: 
- {}
-Depois: 
- {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240}]"}
-Antes: 
- {}
-Depois: 
- {"cart":"[{\"id\":1,\"name\":\"Keyboard\",\"price\":120.9},{\"id\":2,\"name\":\"Mouse\",\"price\":79.5},{\"id\":3,\"name\":\"Monitor\",\"price\":1299},{\"id\":4,\"name\":\"Headset\",\"price\":240},{\"id\":5,\"name\":\"Webcam\",\"price\":320}]"}
-Todos os botões estão ativados 
-
-Produto adicionado ao carrinho: ID: 1, Nome: Keyboard, Preço: R$120.9, Quantidade: 1
-Produto adicionado ao carrinho: ID: 2, Nome: Mouse, Preço: R$79.5, Quantidade: 1
-Produto adicionado ao carrinho: ID: 3, Nome: Monitor, Preço: R$1299, Quantidade: 1
-Produto adicionado ao carrinho: ID: 4, Nome: Headset, Preço: R$240, Quantidade: 1
-Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 1
-
- O valor do cart é: 5
-
-[[ATTACHMENT|test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md]]
+<![CDATA[Menssage recebida: 
+ 
 ]]>
 </system-out>
-<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
-<![CDATA[  [chromium] › tests\FrontEnd\products.spec.ts:42:9 › Products › products adicionar produto no carrinho 
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: "0"
-    Received: "5"
-
-      46 |         await page.reload();
-      47 |         let valorCart = await page.locator('#cart-count').innerText();
-    > 48 |         await expect(valorCart).toBe('0');
-         |                                 ^
-      49 |         console.log("\n O valor do carrinho depois do refresh é: ", valorCart);
-      50 |     });
-      51 |
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\products.spec.ts:48:33
-
-    Error Context: test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md
-]]>
-</failure>
 </testcase>
 </testsuite>
 </testsuites>
