@@ -3,10 +3,15 @@ import { Page, expect, Locator } from '@playwright/test';
 export class NavegationPage {
     
     readonly page: Page;
+
+    readonly username: Locator;
+    readonly password: Locator
    
 
     constructor(page: Page){
         this.page = page;
+        this.username = page.locator('#username');
+        this.password = page.locator('#password');
         
     }
     async homePage(){

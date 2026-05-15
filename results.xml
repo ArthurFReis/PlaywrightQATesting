@@ -1,6 +1,42 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="16.214281999999656">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:34:24.208Z" hostname="chromium" tests="1" failures="1" skipped="0" time="14.639" errors="0">
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="14.639">
+<testsuites id="" name="" tests="6" failures="1" skipped="0" errors="0" time="12.493743999999017">
+<testsuite name="tests\FrontEnd\home.spec.ts" timestamp="2026-05-15T11:52:41.019Z" hostname="chromium" tests="2" failures="0" skipped="0" time="5.153" errors="0">
+<testcase name="Login › Home Responsivo" classname="tests\FrontEnd\home.spec.ts" time="3.281">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Menu" classname="tests\FrontEnd\home.spec.ts" time="1.872">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:52:41.019Z" hostname="chromium" tests="4" failures="1" skipped="0" time="4.686" errors="0">
+<testcase name="Products › Products Responsivo" classname="tests\FrontEnd\products.spec.ts" time="1.019">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › Menu" classname="tests\FrontEnd\products.spec.ts" time="1.694">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products pesquisa pelo nome completo correto" classname="tests\FrontEnd\products.spec.ts" time="1.129">
+<system-out>
+<![CDATA[Pesquisa com sucesso!
+]]>
+</system-out>
+</testcase>
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="0.844">
 <system-out>
 <![CDATA[Antes: 
  {}

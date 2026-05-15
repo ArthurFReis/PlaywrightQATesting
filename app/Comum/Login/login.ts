@@ -1,13 +1,14 @@
-import { Page, expect } from '@playwright/test';
+import { Page, expect } from '@playwright/test';    
+import { NavegationPage } from '../../../tests/FrontEnd/navegationPage';
 
-// Função exportada que pode ser usada em qualquer lugar
 export async function realizarLogin(page: Page) {
-    let usuario = await page.locator('#username').isEditable();
-    let senha = await page.locator('#password').isEditable();
+    let navegationPage = new NavegationPage(page);
+    let usuario =await navegationPage.username.isEditable();
+    let senha = await navegationPage.password.isEditable();
     if (usuario === true && senha === true){
         await page.fill('#username', 'valid_user');
-        await page.locator('#username').fill('valid_user');
-        await page.fill('#password',  'secret123');
+        await navegationPage.username.fill('valid_user');
+        await navegationPage.password.fill('secret123');
         await page.screenshot({path: "Evidencias/login/PreenchimentoCorretoAmbos.png"});
         const btnLogin = await page.locator('#btnLogin').isDisabled();
         const btnLogin2 = await page.locator('#btnLogin2').isVisible()
