@@ -45,6 +45,7 @@ test.describe.parallel('Products', () => {
         await AdicionarProdutosnoCarrinho(page);
         await page.reload();
         let valorCart = await page.locator('#cart-count').innerText();
+        await expect(valorCart).toBe('0');
         console.log("\n O valor do carrinho depois do refresh é: ", valorCart);
     });
 

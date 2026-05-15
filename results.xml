@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.1268339999998">
-<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:31:23.027Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.324" errors="0">
-<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="15.324">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="16.214281999999656">
+<testsuite name="tests\FrontEnd\products.spec.ts" timestamp="2026-05-15T11:34:24.208Z" hostname="chromium" tests="1" failures="1" skipped="0" time="14.639" errors="0">
+<testcase name="Products › products adicionar produto no carrinho" classname="tests\FrontEnd\products.spec.ts" time="14.639">
 <system-out>
 <![CDATA[Antes: 
  {}
@@ -32,9 +32,29 @@ Produto adicionado ao carrinho: ID: 5, Nome: Webcam, Preço: R$320, Quantidade: 
 
  O valor do cart é: 5
 
- O valor do carrinho depois do refresh é:  5
+[[ATTACHMENT|test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md]]
 ]]>
 </system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › tests\FrontEnd\products.spec.ts:42:9 › Products › products adicionar produto no carrinho 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "0"
+    Received: "5"
+
+      46 |         await page.reload();
+      47 |         let valorCart = await page.locator('#cart-count').innerText();
+    > 48 |         await expect(valorCart).toBe('0');
+         |                                 ^
+      49 |         console.log("\n O valor do carrinho depois do refresh é: ", valorCart);
+      50 |     });
+      51 |
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\products.spec.ts:48:33
+
+    Error Context: test-results\tests-FrontEnd-products-Pr-f429f-icionar-produto-no-carrinho-chromium\error-context.md
+]]>
+</failure>
 </testcase>
 </testsuite>
 </testsuites>
