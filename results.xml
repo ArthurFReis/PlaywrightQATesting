@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.18237899999996">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T12:22:55.408Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.469" errors="0">
-<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="15.469">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.237090000000084">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T12:27:27.706Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.085" errors="0">
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="6.085">
 <system-out>
 <![CDATA[Menssage recebida:  Invalid credentials
 ]]>
