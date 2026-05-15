@@ -1,29 +1,15 @@
-<testsuites id="" name="" tests="6" failures="2" skipped="0" errors="0" time="14.215743000000716">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T14:29:14.245Z" hostname="chromium" tests="6" failures="2" skipped="0" time="11.466" errors="0">
-<testcase name="Login › login responsivo" classname="tests\FrontEnd\login.spec.ts" time="1.107">
-<system-out>
-<![CDATA[É responsivo! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Menu" classname="tests\FrontEnd\login.spec.ts" time="1.612">
-<system-out>
-<![CDATA[Todas as páginas estão funcionando! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="0.471">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="6.440185000000522">
+<testsuite name="tests\FrontEnd\checkout.spec.ts" timestamp="2026-05-15T14:32:57.308Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.811" errors="0">
+<testcase name="checkout › cheout Authenticated" classname="tests\FrontEnd\checkout.spec.ts" time="4.811">
 <system-out>
 <![CDATA[Menssage recebida: 
   
 
-[[ATTACHMENT|test-results\tests-FrontEnd-login-Login-login-correto-chromium\error-context.md]]
+[[ATTACHMENT|test-results\tests-FrontEnd-checkout-checkout-cheout-Authenticated-chromium\error-context.md]]
 ]]>
 </system-out>
 <failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
-<![CDATA[  [chromium] › tests\FrontEnd\login.spec.ts:30:9 › Login › login correto ───────────────────────────
+<![CDATA[  [chromium] › tests\FrontEnd\checkout.spec.ts:33:9 › checkout › cheout Authenticated ──────────────
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -40,53 +26,9 @@
       25 |         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
       26 |     }
         at realizarLogin (C:\Users\013772631\Downloads\ecm-qa-test-main\app\Comum\Login\login.ts:23:29)
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\login.spec.ts:31:8
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\checkout.spec.ts:36:9
 
-    Error Context: test-results\tests-FrontEnd-login-Login-login-correto-chromium\error-context.md
-]]>
-</failure>
-</testcase>
-<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="3.939">
-<system-out>
-<![CDATA[Menssage recebida:  Invalid credentials
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.749">
-<system-out>
-<![CDATA[Menssage recebida:  Invalid credentials
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="0.588">
-<system-out>
-<![CDATA[Menssage recebida: 
- 
-
-[[ATTACHMENT|test-results\tests-FrontEnd-login-Login-login-localstorage-chromium\error-context.md]]
-]]>
-</system-out>
-<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
-<![CDATA[  [chromium] › tests\FrontEnd\login.spec.ts:67:5 › Login › login localstorage ──────────────────────
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: "Login successful"
-    Received: ""
-
-       at app\Comum\Login\login.ts:71
-
-      69 |     const tempo = await page.locator('#msg').innerText({timeout:600});
-      70 |     console.log('Menssage recebida: \n', tempo)
-    > 71 |     await expect(tempo).toBe('Login successful');
-         |                         ^
-      72 |     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
-      73 |     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"}); 
-      74 |     //await page.close();
-        at localStorageLogin (C:\Users\013772631\Downloads\ecm-qa-test-main\app\Comum\Login\login.ts:71:25)
-        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\login.spec.ts:68:5
-
-    Error Context: test-results\tests-FrontEnd-login-Login-login-localstorage-chromium\error-context.md
+    Error Context: test-results\tests-FrontEnd-checkout-checkout-cheout-Authenticated-chromium\error-context.md
 ]]>
 </failure>
 </testcase>

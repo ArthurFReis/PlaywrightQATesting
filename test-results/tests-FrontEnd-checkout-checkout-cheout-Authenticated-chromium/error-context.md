@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: tests\FrontEnd\login.spec.ts >> Login >> login correto
-- Location: tests\FrontEnd\login.spec.ts:30:9
+- Name: tests\FrontEnd\checkout.spec.ts >> checkout >> cheout Authenticated
+- Location: tests\FrontEnd\checkout.spec.ts:33:9
 
 # Error details
 
