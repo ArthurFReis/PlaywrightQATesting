@@ -18,9 +18,9 @@ export async function realizarLogin(page: Page) {
         else {
             await page.locator('#btnLogin').click();    
         }
-        const tempo = await page.locator('#msg').textContent({timeout:600});
+        const tempo = await page.locator('#msg').innerText({timeout:600});
         console.log('Menssage recebida: \n ', tempo)
-        await expect(page.locator('#msg')).toHaveText('Login successful');
+        await expect(tempo).toBe('Login successful');
         //await page.locator('#btnLogin').click();
         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
     }
