@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: tests\FrontEnd\login.spec.ts >> Login >> login correto
-- Location: tests\FrontEnd\login.spec.ts:30:9
+- Name: tests\FrontEnd\login.spec.ts >> Login >> login localstorage
+- Location: tests\FrontEnd\login.spec.ts:67:5
 
 # Error details
 
@@ -74,8 +74,7 @@ Received: ""
   20 |         }
   21 |         const tempo = await page.locator('#msg').innerText({timeout:600});
   22 |         console.log('Menssage recebida: \n ', tempo)
-> 23 |         await expect(tempo).toBe('Login successful');
-     |                             ^ Error: expect(received).toBe(expected) // Object.is equality
+  23 |         await expect(tempo).toBe('Login successful');
   24 |         //await page.locator('#btnLogin').click();
   25 |         await page.screenshot({path: "Evidencias/login/LoginProductsCorreto.png"});
   26 |     }
@@ -123,7 +122,8 @@ Received: ""
   68 |     await page.locator('#btnLogin').click();
   69 |     const tempo = await page.locator('#msg').innerText({timeout:600});
   70 |     console.log('Menssage recebida: \n', tempo)
-  71 |     await expect(tempo).toBe('Login successful');
+> 71 |     await expect(tempo).toBe('Login successful');
+     |                         ^ Error: expect(received).toBe(expected) // Object.is equality
   72 |     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
   73 |     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"}); 
   74 |     //await page.close();

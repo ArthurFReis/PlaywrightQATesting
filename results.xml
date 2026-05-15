@@ -1,6 +1,20 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="4.954730000000447">
-<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T14:24:08.505Z" hostname="chromium" tests="1" failures="1" skipped="0" time="3.192" errors="0">
-<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="3.192">
+<testsuites id="" name="" tests="6" failures="2" skipped="0" errors="0" time="14.215743000000716">
+<testsuite name="tests\FrontEnd\login.spec.ts" timestamp="2026-05-15T14:29:14.245Z" hostname="chromium" tests="6" failures="2" skipped="0" time="11.466" errors="0">
+<testcase name="Login › login responsivo" classname="tests\FrontEnd\login.spec.ts" time="1.107">
+<system-out>
+<![CDATA[É responsivo! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Menu" classname="tests\FrontEnd\login.spec.ts" time="1.612">
+<system-out>
+<![CDATA[Todas as páginas estão funcionando! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login correto" classname="tests\FrontEnd\login.spec.ts" time="0.471">
 <system-out>
 <![CDATA[Menssage recebida: 
   
@@ -18,7 +32,7 @@
 
        at app\Comum\Login\login.ts:23
 
-      21 |         const tempo = await page.locator('#msg').innerHTML({timeout:600});
+      21 |         const tempo = await page.locator('#msg').innerText({timeout:600});
       22 |         console.log('Menssage recebida: \n ', tempo)
     > 23 |         await expect(tempo).toBe('Login successful');
          |                             ^
@@ -29,6 +43,50 @@
         at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\login.spec.ts:31:8
 
     Error Context: test-results\tests-FrontEnd-login-Login-login-correto-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="Login › login usuario errado" classname="tests\FrontEnd\login.spec.ts" time="3.939">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login password errado" classname="tests\FrontEnd\login.spec.ts" time="3.749">
+<system-out>
+<![CDATA[Menssage recebida:  Invalid credentials
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › login localstorage" classname="tests\FrontEnd\login.spec.ts" time="0.588">
+<system-out>
+<![CDATA[Menssage recebida: 
+ 
+
+[[ATTACHMENT|test-results\tests-FrontEnd-login-Login-login-localstorage-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › tests\FrontEnd\login.spec.ts:67:5 › Login › login localstorage ──────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Login successful"
+    Received: ""
+
+       at app\Comum\Login\login.ts:71
+
+      69 |     const tempo = await page.locator('#msg').innerText({timeout:600});
+      70 |     console.log('Menssage recebida: \n', tempo)
+    > 71 |     await expect(tempo).toBe('Login successful');
+         |                         ^
+      72 |     await page.context().storageState({ path: 'Evidencias/login/localsotage/storageState.json' });
+      73 |     await page.screenshot({path: "Evidencias/login/localsotage/LoginlocalstorageClicado.png"}); 
+      74 |     //await page.close();
+        at localStorageLogin (C:\Users\013772631\Downloads\ecm-qa-test-main\app\Comum\Login\login.ts:71:25)
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\FrontEnd\login.spec.ts:68:5
+
+    Error Context: test-results\tests-FrontEnd-login-Login-login-localstorage-chromium\error-context.md
 ]]>
 </failure>
 </testcase>
