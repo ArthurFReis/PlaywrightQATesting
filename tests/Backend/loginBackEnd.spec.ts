@@ -28,10 +28,22 @@ test("Backend erro no login", async ({ request, page }) => {
 
     });
     
-test('Backend erro no usuário do login', async ({ request, page }) => {
+    test('Backend erro no usuário do login', async ({ request, page }) => {
        const site = 'http://localhost:8080';
   
         const response = await request.post(`${site}/login`, {
+        form: {
+            username: 'valid',
+            password: 'secret123'
+              }
+  });
+  expect(response.status()).toBe(200);
+});
+
+test('Backend erro no password do login', async ({ request, page }) => {
+       const site = 'http://localhost:8080';
+  
+        const response = await request.get(`${site}/login`, {
         form: {
             username: 'valid',
             password: 'secret123'

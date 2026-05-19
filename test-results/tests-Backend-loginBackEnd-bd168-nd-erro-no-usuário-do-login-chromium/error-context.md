@@ -60,11 +60,9 @@ Received: 404
   37 |             password: 'secret123'
   38 |               }
   39 |   });
-  40 | 
-  41 |   // Verify the login was successful (e.g., 200 OK or 302 Redirect, depending on your backend)
-> 42 |   expect(response.status()).toBe(200);
+> 40 |   expect(response.status()).toBe(200);
      |                             ^ Error: expect(received).toBe(expected) // Object.is equality
-  43 | });
-  44 | 
-  45 |     });
+  41 | });
+  42 | 
+  43 |     });
 ```

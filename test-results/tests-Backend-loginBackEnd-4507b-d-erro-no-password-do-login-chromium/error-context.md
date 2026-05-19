@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: tests\Backend\loginBackEnd.spec.ts >> API com paralelo >> Backend erro no usuário do login
-- Location: tests\Backend\loginBackEnd.spec.ts:31:9
+- Name: tests\Backend\loginBackEnd.spec.ts >> API com paralelo >> Backend erro no password do login
+- Location: tests\Backend\loginBackEnd.spec.ts:43:5
 
 # Error details
 
@@ -60,11 +60,21 @@ Received: 404
   37 |             password: 'secret123'
   38 |               }
   39 |   });
-  40 | 
-  41 |   // Verify the login was successful (e.g., 200 OK or 302 Redirect, depending on your backend)
-> 42 |   expect(response.status()).toBe(200);
+  40 |   expect(response.status()).toBe(200);
+  41 | });
+  42 | 
+  43 | test('Backend erro no password do login', async ({ request, page }) => {
+  44 |        const site = 'http://localhost:8080';
+  45 |   
+  46 |         const response = await request.get(`${site}/login`, {
+  47 |         form: {
+  48 |             username: 'valid',
+  49 |             password: 'secret123'
+  50 |               }
+  51 |   });
+> 52 |   expect(response.status()).toBe(200);
      |                             ^ Error: expect(received).toBe(expected) // Object.is equality
-  43 | });
-  44 | 
-  45 |     });
+  53 | });
+  54 | 
+  55 |     });
 ```
