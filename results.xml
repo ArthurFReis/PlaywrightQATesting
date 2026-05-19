@@ -1,6 +1,66 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.654422999999952">
-<testsuite name="tests\Backend\loginBackEnd.spec.ts" timestamp="2026-05-19T12:30:59.153Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.237" errors="0">
-<testcase name="API com paralelo › Backend erro no login" classname="tests\Backend\loginBackEnd.spec.ts" time="1.237">
+<testsuites id="" name="" tests="4" failures="2" skipped="0" errors="0" time="4.716730999999999">
+<testsuite name="tests\Backend\loginBackEnd.spec.ts" timestamp="2026-05-19T12:49:03.883Z" hostname="chromium" tests="4" failures="2" skipped="0" time="2.28" errors="0">
+<testcase name="API com paralelo › Login correto" classname="tests\Backend\loginBackEnd.spec.ts" time="0.094">
+<system-out>
+<![CDATA[Login correto, status:  [33m200[39m
+]]>
+</system-out>
+</testcase>
+<testcase name="API com paralelo › Backend erro no login" classname="tests\Backend\loginBackEnd.spec.ts" time="0.991">
+</testcase>
+<testcase name="API com paralelo › Backend erro no usuário do login" classname="tests\Backend\loginBackEnd.spec.ts" time="1.002">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-Backend-loginBackEnd-bd168-nd-erro-no-usuário-do-login-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › tests\Backend\loginBackEnd.spec.ts:31:9 › API com paralelo › Backend erro no usuário do login 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      38 |               }
+      39 |   });
+    > 40 |   expect(response.status()).toBe(200);
+         |                             ^
+      41 | });
+      42 |
+      43 | test('Backend erro no password do login', async ({ request, page }) => {
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\Backend\loginBackEnd.spec.ts:40:29
+
+    Error Context: test-results\tests-Backend-loginBackEnd-bd168-nd-erro-no-usuário-do-login-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Backend erro no password do login" classname="tests\Backend\loginBackEnd.spec.ts" time="0.193">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-Backend-loginBackEnd-4507b-d-erro-no-password-do-login-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › tests\Backend\loginBackEnd.spec.ts:43:5 › API com paralelo › Backend erro no password do login 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      50 |               }
+      51 |   });
+    > 52 |   expect(response.status()).toBe(200);
+         |                             ^
+      53 | });
+      54 |
+      55 |     });
+        at C:\Users\013772631\Downloads\ecm-qa-test-main\tests\Backend\loginBackEnd.spec.ts:52:29
+
+    Error Context: test-results\tests-Backend-loginBackEnd-4507b-d-erro-no-password-do-login-chromium\error-context.md
+]]>
+</failure>
 </testcase>
 </testsuite>
 </testsuites>
